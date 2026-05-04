@@ -7,6 +7,7 @@ import TradeProcess from "./pages/TradeProcess";
 import GlobalReach from "./pages/GlobalReach";
 import Contact from "./pages/Contact";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/footerSection";
 
 const App=()=> {
     return(
@@ -21,6 +22,7 @@ const App=()=> {
                 <Route path="/global-reach" element={<GlobalReach/>}/>
                 <Route path="/contact" element={<Contact/>} />
             </Routes>
+            <Footer/>
         </BrowserRouter>
     ) 
 }
