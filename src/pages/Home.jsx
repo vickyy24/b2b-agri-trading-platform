@@ -15,6 +15,10 @@ import { Link } from "react-router-dom";
 const Home=()=>{
     return(
         <div>
+
+
+
+            
             {/* Vendor registration floating button */}
             <a href="#" className="fixed right-4 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center">
 
@@ -127,22 +131,22 @@ const Home=()=>{
                 <div>
                     <h4 className="text-3xl text-center font-bold text-[#8b4513] mb-12">Our Services</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-                        <div className="bg-white border border-gray-100 shadow-md p-6 rounded-lg text-center">
+                        <div className="bg-white border border-gray-100 shadow-md p-6 rounded-lg text-center hover:scale-105 duration-300">
                             <p className="text-4xl mb-4">🌾</p>
                             <h3 className="text-xl font-bold text-green-700 mb-2">Trading</h3>
                             <p className="text-gray-600">Global commodity trading solutions</p>
                         </div>
-                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center">
+                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center hover:scale-105 duration-300">
                             <p className="text-4xl mb-4">📤</p>
                             <h3 className="text-xl font-bold text-green-700 mb-2">Exports</h3>
                             <p className="text-gray-600">International export services</p>
                         </div>
-                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center">
+                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center hover:scale-105 duration-300">
                             <p className="text-4xl mb-4">📥</p>
                             <h3 className="text-xl font-bold text-green-700 mb-2">Imports</h3>
                             <p className="text-gray-600">Import sourcing & logistics</p>
                         </div>
-                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center">
+                        <div className="bg-white border border-gray-100 shadow-md  p-6 rounded-lg text-center hover:scale-105 duration-300">
                             <p className="text-4xl mb-4">🏭</p>
                             <h3 className="text-xl font-bold text-green-700 mb-2">Manufacturing</h3>
                             <p className="text-gray-600">Processing facilities</p>
