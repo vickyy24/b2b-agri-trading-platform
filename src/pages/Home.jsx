@@ -1,3 +1,6 @@
+import { useState } from "react";
+import QuoteModal from "../Components/QuoteModal"; 
+
 import { FiUserPlus } from "react-icons/fi";
 import { MdArrowForwardIos } from "react-icons/md";
 
@@ -13,12 +16,17 @@ import logo from"../assets/PadmayogLogo.png";
 import { Link } from "react-router-dom";
 
 const Home=()=>{
+    const [isOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return(
         <div>
-
-
-
-            
             {/* Vendor registration floating button */}
             <a href="#" className="fixed right-4 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center">
 
@@ -50,7 +58,7 @@ const Home=()=>{
                         Sustainable sourcing, advanced processing, and dependable global delivery.
                     </p>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-white text-[#8b4513] hover:bg-gray-100 rounded-md font-semibold px-8 py-3">
+                        <button className="bg-white text-[#8b4513] hover:bg-gray-100 rounded-md font-semibold px-8 py-3 cursor-pointer" onClick={openModal}>
                             Request a Quote
                         </button>
                         <a href="#services" className="border border-white/80 text-white hover:bg-white hover:text-[#8b4513] rounded-md font-semibold px-8 py-3">
@@ -157,13 +165,15 @@ const Home=()=>{
             </section>
 
             {/* Section 4 */}
-            <section className="h-117 py-16  bg-[#FFF7ED]">
+            <section id="NeedQuote" className="h-117 py-16  bg-[#FFF7ED]">
                 <div className="px-4">
                     <div className="text-center mb-12">
                         <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-4">Need a Quote?</h5>
                         <p className="text-gray-600 mb-8">Get competitive pricing for your commodity requirements. Click below to open the quote form.</p>
                         
-                        <button className="bg-green-800 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold shadow-lg"> <span className="flex items-center gap-2"><MdArrowForwardIos />Open Quote Form</span></button>
+                        <button className="bg-green-800 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold shadow-lg cursor-pointer" onClick={openModal}>
+                            <span className="flex items-center gap-2"><MdArrowForwardIos />Open Quote Form</span>
+                        </button>
                     </div>
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">
@@ -278,7 +288,10 @@ const Home=()=>{
                 </div>
                 
             </section>
-
+            {isOpen && (
+                <QuoteModal isOpen={isOpen} onClose={closeModal}/>
+            )}
+            
             {/* Section 7 */}
             {/* <footer className="h-105 bg-amber-800 text-white">
                 <div className="flex justify-center">
