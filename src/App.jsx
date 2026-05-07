@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Commodities from "./pages/Commodities";
@@ -8,21 +8,35 @@ import GlobalReach from "./pages/GlobalReach";
 import Contact from "./pages/Contact";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footerSection";
+import Admin from "./pages/AdminPanel";
 
 const App=()=> {
     return(
         <BrowserRouter>
-            <Navbar />
+
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/commodities" element={<Commodities/>}/>
-                <Route path="/services" element={<Services/>}/>
-                <Route path="/trade-process" element={<TradeProcess/>}/>
-                <Route path="/global-reach" element={<GlobalReach/>}/>
-                <Route path="/contact" element={<Contact/>} />
+                {/* Parent Layout */}
+                <Route element={
+                    <>
+                        <Navbar />
+                        <Outlet />
+                        <Footer />
+                    </>
+                }>
+                    {/* child routes rendered inside Outlet */}
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/commodities" element={<Commodities />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/trade-process" element={<TradeProcess />} />
+                    <Route path="/global-reach" element={<GlobalReach />} />
+                    <Route path="/contact" element={<Contact />} />
+
+                </Route>
+                <Route path="/admin" element={<Admin />} />
+
             </Routes>
-            <Footer/>
+
         </BrowserRouter>
     ) 
 }

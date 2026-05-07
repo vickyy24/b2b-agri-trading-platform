@@ -44,7 +44,7 @@ const Footer=()=>{
                                 <Link to="" className="text-gray-300 hover:text-white">Generate Packing List</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Admin Panel</Link>
+                                <Link to="/admin" className="text-gray-300 hover:text-white">Admin Panel</Link>
                             </li>
                         </ul>
                         

@@ -27,6 +27,8 @@ const Home=()=>{
 
     return(
         <div>
+            {/* Floating WhatsApp button */}
+            {/* <a href="#">WhatsApp Button</a> */}
             {/* Vendor registration floating button */}
             <a href="#" className="fixed right-4 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center">
 
