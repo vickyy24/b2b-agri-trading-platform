@@ -132,10 +132,10 @@ const Admin = () => {
                                 <table className="w-full border">
                                     <thead className="bg-[#f3f5f2]">
                                         <tr>
-                                            <th className="text-left px-5 py-4 border border-gray-100">Sr No</th>
-                                            <th className="text-left px-5 py-4 border border-gray-100">Category Name</th>
-                                            <th className="text-left px-5 py-4 border border-gray-100">Is Active</th>
-                                            <th className="text-left px-5 py-4 border border-gray-100">Action</th>
+                                            <th className="text-left px-5 py-4 border border-gray-300">Sr No</th>
+                                            <th className="text-left px-5 py-4 border border-gray-300">Category Name</th>
+                                            <th className="text-left px-5 py-4 border border-gray-300">Is Active</th>
+                                            <th className="text-left px-5 py-4 border border-gray-300">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -167,15 +167,15 @@ const Admin = () => {
                                 
                                 <label className="block text-sm font-medium text-gray-800 mb-2">Product Name</label>
                                 <input type="text" placeholder="Enter product name" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700"/>
-
-                                <label className="block text-sm font-medium text-gray-800 mb-2">Product Image</label>
-                                <input type="file" className="w-full border border-gray-300 rounded-lg px-4 py-3"/>
                                 
                                 <label className="block text-sm font-medium text-gray-800 mb-2">Packaging Detail</label>
                                 <input type="text" placeholder="Enter packaging detail" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700"/>
 
                                 <label className="block text-sm font-medium text-gray-800 mb-2">HS Code</label>
                                 <input type="text" placeholder="Enter HS code" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700"/>
+
+                                <label className="block text-sm font-medium text-gray-800 mb-2">Product Image</label>
+                                <input type="file" className="w-full border border-gray-300 rounded-lg px-4 py-3"/>
                             </div>
 
                             <div className="flex justify-between items-center mb-4 mt-8">
@@ -266,7 +266,7 @@ const Admin = () => {
 
                         </form >
 
-                        {/* Product List Table */}
+                        {/* --------- Product List Table ---------*/}
                         <div className="w-[60%] bg-white rounded-2xl shadow-md p-6">
 
                             <h2 className="text-2xl font-semibold text-[#8b4513] mb-6"> Product List</h2>
