@@ -1,10 +1,10 @@
 const con = require("../Config/db");
 
-// For POST API
+// POST API Handling Function
 async function addCategory(req, res){
 
     try{
-
+        
         const d= req.body;
 
         const [result] = await con.query(
@@ -27,7 +27,7 @@ async function addCategory(req, res){
     }
 }
 
-// For GET API
+// GET API Handling Function
 async function getCategories(req, res){
 
     try{
@@ -42,8 +42,7 @@ async function getCategories(req, res){
     }
 }
 
-// For PUT API
-
+// PUT API Handling Function
 async function updateCategory(req, res){
 
     try{
@@ -62,7 +61,7 @@ async function updateCategory(req, res){
         }
         else{
 
-            await con.query(`UPDATE Categories_table SET category_name=?, isactive=? WHERE category_id=?`,[d.CategoryName,d.IsActive,id]);
+            await con.query(`UPDATE Categories_table SET category_name=?, isactive=? WHERE category_id=?`,[d.CategoryName,d.IsActive,catid]);
 
             res.status(200).send({
                 message: "Category Updated Successfully"
