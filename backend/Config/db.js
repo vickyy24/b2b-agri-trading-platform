@@ -8,7 +8,7 @@ const con = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-}).promise();
+});
 
 con.connect(function(error){
     if(error){
@@ -19,4 +19,4 @@ con.connect(function(error){
     }
 });
 
-module.exports = con
+module.exports = con.promise();

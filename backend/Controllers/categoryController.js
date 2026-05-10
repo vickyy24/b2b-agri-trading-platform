@@ -49,7 +49,7 @@ async function updateCategory(req, res){
 
         const d = req.body;
 
-        const catid = req.params.id;
+        const catid = req.params.categoryid;
 
         const [result] = await con.query(`SELECT * FROM Categories_table WHERE LOWER(category_name)=LOWER(?) AND category_id!=?`,
             [d.CategoryName,catid]
