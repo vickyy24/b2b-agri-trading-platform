@@ -43,7 +43,5 @@ app.put("/updateproduct/:productid", upload.single("ProductImage"), updateProduc
 
 
 app.listen(9000, function(){
-
     console.log("Server Started");
-
 });
