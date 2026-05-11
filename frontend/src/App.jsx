@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footerSection";
 import Admin from "./pages/AdminPanel";
+import CategoryAdmin from "./pages/CategoryAdmin";
+import ProductAdmin from "./pages/ProductAdmin";
 
 const App=()=> {
     return(
@@ -33,7 +35,11 @@ const App=()=> {
                     <Route path="/contact" element={<Contact />} />
 
                 </Route>
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin" element={<Admin />}>
+                    <Route index element={<CategoryAdmin />} />
+                    <Route path="category" element={<CategoryAdmin />} />
+                    <Route path="product" element={<ProductAdmin />} />
+                </Route>
 
             </Routes>
 
