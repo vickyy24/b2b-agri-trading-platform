@@ -46,7 +46,7 @@ async function getCategories(req, res){
 async function updateCategory(req, res){
 
     try{
-
+        
         const d = req.body;
 
         const catid = req.params.categoryid;
