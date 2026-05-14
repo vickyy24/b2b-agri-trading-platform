@@ -183,8 +183,8 @@ const CategoryAdmin=()=>{
                     <form onSubmit={addCategory} className="space-y-5">
 
                         <label className="block text-sm font-medium text-gray-800 mb-2">Category Name *</label>
-                        <input type="text" name="CategoryName" value={categoryInput.CategoryName} onChange={handleCategoryInput} placeholder="Enter category name"
-                            className={"w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700" + 
+                        <input type="text" name="CategoryName" value={categoryInput.CategoryName}  onChange={handleCategoryInput} placeholder="Enter category name"
+                            className={"w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700 focus:outline-none" + 
                             (categoryError.categorynameError ? " border-red-500" : "border-gray-300")}
                         />
                         {
@@ -194,7 +194,7 @@ const CategoryAdmin=()=>{
 
                         <label className="block text-sm font-medium text-gray-800 mb-2">Is Active *</label>
                         <select name="IsActive" value={categoryInput.IsActive} onChange={handleCategoryInput}
-                            className={"w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700" + 
+                            className={"w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700 focus:outline-none" + 
                             ( categoryError.isactiveError  ? " border-red-500"  : "border-gray-300")}>
 
                             <option value="">Select Status</option>
@@ -245,11 +245,11 @@ const CategoryAdmin=()=>{
                                         
                                         <tr key={index}>
 
-                                            <td className="px-5 py-4 border border-gray-300">{index + 1}</td>
-                                            <td className="px-5 py-4 border border-gray-300">{item.category_name}</td>
-                                            <td className="px-5 py-4 border border-gray-300">{item.isactive}</td>
-                                            <td className="px-5 py-4 border border-gray-300"> 
-                                                <button type="button" onClick={()=>editCategory(item)} className="px-4 py-2 rounded-lg bg-blue-600 text-white cursor-pointer">
+                                            <td className="px-5 py-3 border border-gray-300">{index + 1}</td>
+                                            <td className="px-5 py-3 border border-gray-300">{item.category_name}</td>
+                                            <td className="px-5 py-3 border border-gray-300">{item.isactive}</td>
+                                            <td className="px-5 py-3 border border-gray-300"> 
+                                                <button type="button" onClick={()=>editCategory(item)} className="px-4 py-1 rounded-lg bg-blue-600 text-white cursor-pointer">
                                                    Edit
                                                 </button>
                                             </td>
