@@ -6,7 +6,7 @@ const Admin = () => {
     const location = useLocation();
 
     return (
-        <div className="min-h-screen bg-[#f8faf7] px-6 py-6">
+        <div className="min-h-screen bg-[#f8faf7] px-3 py-6">
 
             <div className="mb-5">
                 <h1 className="text-3xl font-bold text-[#8b4513] mb-1">Admin Panel</h1>
