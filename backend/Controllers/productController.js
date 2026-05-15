@@ -21,13 +21,21 @@ async function addProduct(req,res){
 
             const productid = productdata.insertId;
 
-            await con.query(
-                "insert into Product_Specification_table(product_id, title, value) values(?,?,?)",[productid,d.Title,d.Value]
-            );
+            const specificationlist = JSON.parse(d.SpecificationList);
+            for(let i=0; i<specificationlist.length; i++){
+                await con.query(
+                    "insert into Product_Specification_table(product_id, title, value) values(?,?,?)",
+                    [productid, specificationlist[i].title, specificationlist[i].value]
+                );
+            }
 
-            await con.query(
-                "insert into Quality_Grades_table(product_id, grade) values(?,?)",[productid,d.Grade]
-            );
+            const gradeslist = JSON.parse(d.GradesList);
+            for(let i=0; i<gradeslist.length; i++){
+                await con.query(
+                    "insert into Quality_Grades_table(product_id, grade) values(?,?)",
+                    [productid, gradeslist[i].grades]
+                );
+            }
             res.status(200).send({message: "Product Added Successfully"});
         }
     }
@@ -42,12 +50,21 @@ async function getProducts(req, res){
     try{
 
         const [result] = await con.query(
-            `SELECT c.category_name, p.product_name, p.packaging_detail, p.hs_code,p.image, ps.title, ps.value, qg.grade
+            `SELECT p.product_id, p.category_id, c.category_name, p.product_name,p.packaging_detail,p.hs_code,p.image
             FROM Products_table p
-            JOIN Categories_table c ON p.category_id=c.category_id
-            JOIN Product_Specification_table ps ON p.product_id=ps.product_id
-            JOIN Quality_Grades_table qg ON p.product_id=qg.product_id`
+            JOIN Categories_table c
+            ON p.category_id = c.category_id`
         );
+
+        for(let i=0; i<result.length; i++){
+
+            const [Specifications] = await con.query("select product_specification_id, title, value from Product_Specification_table where product_id=?", [result[i].product_id]);
+
+            const [Grades] = await con.query("select qualitygrade_id, grade as grades from Quality_Grades_table where product_id=?", [result[i].product_id]);
+
+            result[i].specifications = Specifications;
+            result[i].grades = Grades;
+        }
         res.status(200).send(result);
     }
     catch(error){
@@ -81,6 +98,27 @@ async function updateProduct(req, res){
                 WHERE product_id=?`,[d.CategoryId,d.ProductName,d.PackagingDetail,d.HsCode,imagename,productid]
             );
 
+            const specificationlist = JSON.parse(d.SpecificationList);
+            for(let i=0; i<specificationlist.length; i++){
+                await con.query(
+                    `UPDATE Product_Specification_table SET title=?, value=? WHERE product_specification_id=?`,
+                    [
+                        specificationlist[i].title,
+                        specificationlist[i].value,
+                        specificationlist[i].product_specification_id
+                    ]
+                );
+            }
+
+            const gradeslist = JSON.parse(d.GradesList);
+            for(let i=0; i<gradeslist.length; i++){
+                await con.query(`UPDATE Quality_Grades_table SET grade=? WHERE qualitygrade_id=?`,
+                    [
+                        gradeslist[i].grades,
+                        gradeslist[i].qualitygrade_id
+                    ]
+                );
+            }
             res.status(200).send({message: "Product Updated Successfully"});
         }
     }
