@@ -1,4 +1,4 @@
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Commodities from "./pages/Commodities";
@@ -36,7 +36,7 @@ const App=()=> {
 
                 </Route>
                 <Route path="/admin" element={<Admin />}>
-                    <Route index element={<CategoryAdmin />} />
+                    <Route index element={<Navigate to="category" replace />} /> {/*  /admin automatically redirects to: /admin/category  */}
                     <Route path="category" element={<CategoryAdmin />} />
                     <Route path="product" element={<ProductAdmin />} />
                 </Route>
