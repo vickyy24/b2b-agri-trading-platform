@@ -16,12 +16,12 @@ const Admin = () => {
             <div className="flex gap-4 mb-5">
 
                 <Link to="category" className={
-                    location.pathname === "/admin/category" ? "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-[#2f855a] text-white " : "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-white border border-gray-300 text-gray-700"}>
+                    location.pathname.includes("/admin/category") ? "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-[#2f855a] text-white " : "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-white border border-gray-300 text-gray-700"}>
                     Categories
                 </Link>
 
                <Link to="product" className={
-                    location.pathname === "/admin/product" ? "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-[#2f855a] text-white " : "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-white border border-gray-300 text-gray-700"}>
+                    location.pathname.includes("/admin/product") ? "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-[#2f855a] text-white " : "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-white border border-gray-300 text-gray-700"}>
                     Products
                 </Link>
 
