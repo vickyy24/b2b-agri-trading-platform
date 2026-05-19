@@ -1,4 +1,5 @@
 const con = require("../Config/db");
+const fs = require("fs");
 
 //POST API Handling Function
 async function addProduct(req,res){
@@ -81,6 +82,17 @@ async function updateProduct(req, res){
         const productid = req.params.productid;
 
         const imagename = req.file.filename;
+
+        const [oldImage] = await con.query(
+            "SELECT image FROM Products_table WHERE product_id=?",
+            [productid]
+        );
+
+        const oldImagePath = `uploads/${oldImage[0].image}`;
+
+        if(fs.existsSync(oldImagePath)){
+            fs.unlinkSync(oldImagePath);
+        }
 
         const [result] = await con.query(
             `SELECT * FROM Products_table
