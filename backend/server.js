@@ -35,11 +35,11 @@ app.put("/updatecategory/:categoryid", updateCategory);
 
 
 // Product APIs
-app.post("/addproduct", upload.single("ProductImage"), addProduct);
+app.post("/addproduct", upload.single("Image"), addProduct);
 
 app.get("/getproducts", getProducts);
 
-app.put("/updateproduct/:productid", upload.single("ProductImage"), updateProduct);
+app.put("/updateproduct/:productid", upload.single("Image"), updateProduct);
 
 
 app.listen(9000, function(){

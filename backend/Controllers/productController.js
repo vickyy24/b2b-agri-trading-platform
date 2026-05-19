@@ -97,28 +97,6 @@ async function updateProduct(req, res){
                 SET category_id=?, product_name=?, packaging_detail=?, hs_code=?, image=? 
                 WHERE product_id=?`,[d.CategoryId,d.ProductName,d.PackagingDetail,d.HsCode,imagename,productid]
             );
-
-            const specificationlist = JSON.parse(d.SpecificationList);
-            for(let i=0; i<specificationlist.length; i++){
-                await con.query(
-                    `UPDATE Product_Specification_table SET title=?, value=? WHERE product_specification_id=?`,
-                    [
-                        specificationlist[i].title,
-                        specificationlist[i].value,
-                        specificationlist[i].product_specification_id
-                    ]
-                );
-            }
-
-            const gradeslist = JSON.parse(d.GradesList);
-            for(let i=0; i<gradeslist.length; i++){
-                await con.query(`UPDATE Quality_Grades_table SET grade=? WHERE qualitygrade_id=?`,
-                    [
-                        gradeslist[i].grades,
-                        gradeslist[i].qualitygrade_id
-                    ]
-                );
-            }
             res.status(200).send({message: "Product Updated Successfully"});
         }
     }
