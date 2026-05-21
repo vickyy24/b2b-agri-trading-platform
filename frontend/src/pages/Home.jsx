@@ -49,7 +49,7 @@ const Home=()=>{
             {/* Hero Section 1 */}
             <section className="relative text-white">
                 <div className="h-144 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-cover bg-center scale-110 brightness-73 saturate-75" style={{ backgroundImage: `url(${bg1})` ,}}>
+                    <div className="absolute inset-0 bg-cover bg-center scale-110 brightness-70 saturate-75" style={{ backgroundImage: `url(${bg1})` ,}}>
                     </div>
                 </div> 
                 <div className="absolute top-26 w-full text-center">
