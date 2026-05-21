@@ -61,7 +61,7 @@ async function getProducts(req, res){
 
             const [Specifications] = await con.query("select product_specification_id, title, value from Product_Specification_table where product_id=?", [result[i].product_id]);
 
-            const [Grades] = await con.query("select qualitygrade_id, grade as grades from Quality_Grades_table where product_id=?", [result[i].product_id]);
+            const [Grades] = await con.query("select qualitygrade_id, grade from Quality_Grades_table where product_id=?", [result[i].product_id]);
 
             result[i].specifications = Specifications;
             result[i].grades = Grades;
