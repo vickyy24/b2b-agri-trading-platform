@@ -548,23 +548,25 @@ const ProductAdmin=()=>{
 
                 {/* --------- Product List Table ---------*/}
                 <div className="w-[69%] bg-white rounded-2xl shadow-md p-6">
-                    <h2 className="text-2xl font-semibold text-[#8b4513] mr-5 inline"> Product Data</h2>
+                   
 
                     {
                         categoryList.map((list, index)=>(
                             <button key={index} type="button" onClick={()=>setActiveCategoryTab(list.category_id)}
-                                className={activeCategoryTab == list.category_id ? "px-2 py-1 text-sm mb-4 rounded-full bg-[#2f855a] text-white cursor-pointer mr-1"
-                                    :
-                                    "px-2 py-1 text-sm mb-4 rounded-full border border-gray-300 cursor-pointer mr-1"
+                                className=
+                                {
+                                    activeCategoryTab == list.category_id
+                                    ? "px-3 py-2 text-md mb-3 rounded-full border bg-[#2f855a] text-white cursor-pointer mr-1"
+                                    : "px-3 py-2 text-md mb-3 rounded-full border border-gray-300 cursor-pointer mr-1 hover:bg-[#2f855a] hover:text-white transition-all duration-300"
                                 }>
                                 {list.category_name}
                             </button>
                         ))
                     }
-
+                    <h2 className="text-2xl font-semibold text-[#8b4513] mb-1"> Product Data</h2>
                     <div className="overflow-x-auto">
 
-                        <table className="w-full">
+                        <table className="w-full table-fixed">
                             <thead className="bg-[#f3f5f2]">
                                 <tr>
                                     <th className="text-left px-5 py-4 border border-gray-300">Sr No</th>
@@ -597,7 +599,7 @@ const ProductAdmin=()=>{
                                                         <img src={`http://localhost:9000/uploads/${list.image}`} alt="product" className="w-14 h-14 object-cover rounded"/>
                                                     </td>
                                                     <td className="text-left px-5 py-3 border border-gray-300">
-                                                    {
+                                                        {
                                                             list.specifications.map((item, index)=>(
                                                                 <div key={index}>
                                                                     {item.title} : {item.value}
