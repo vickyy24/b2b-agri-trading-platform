@@ -69,8 +69,6 @@ const Home=()=>{
                         <a href="#" className="lg:hidden border border-white/80 text-white rounded-md font-semibold hover:bg-white hover:text-[#8b4513] px-8 py-3">
                             Vendor Registration
                         </a>
-
-
                     </div>
                 </div>
                 <div className="grid  bottom-20 absolute grid-cols-4 w-full px-4 gap-6">
@@ -167,7 +165,7 @@ const Home=()=>{
             </section>
 
             {/* Section 4 */}
-            <section id="NeedQuote" className="h-117 py-16  bg-[#FFF7ED]">
+            <section id="NeedQuote" className="h-117 py-16  bg-[#f5f5dc]">
                 <div className="px-4">
                     <div className="text-center mb-12">
                         <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-4">Need a Quote?</h5>
@@ -247,7 +245,7 @@ const Home=()=>{
             </section>
 
             {/* Section 6 */}
-            <section className="h-87 bg-pink-50 py-16">
+            <section className="h-87 bg-[#f5f5dc] py-16">
                 <div className="px-4">
                     <div className="text-center mb-12">
                         <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-4"> Brands that Trust Us</h5>
@@ -294,26 +292,6 @@ const Home=()=>{
                 <QuoteModal isOpen={isOpen} onClose={closeModal}/>
             )}
             
-            {/* Section 7 */}
-            {/* <footer className="h-105 bg-amber-800 text-white">
-                <div className="flex justify-center">
-                    <div>
-                        <Link to="/" className="bg-white p-4 rounded-2xl" >
-                            <img src={logo} alt="Padmayoglogo" className="h-12 object-contain"/>
-                        </Link>
-                        
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-bold mb-4">Legal</h4>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-bold mb-4">Contact Us</h4>
-                    </div>
-                </div>
-            </footer> */}
         </div>
         
     )
