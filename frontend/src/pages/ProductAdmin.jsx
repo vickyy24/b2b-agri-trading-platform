@@ -20,7 +20,7 @@ const ProductAdmin=()=>{
     const [specificationlist, setSpecificationlist] = useState([]);
 
     const [gradesInput, setGradesInput] = useState({
-        grades: ""
+        grade: ""
     });
     const [gradeslist, setGradeslist] = useState([]);
     const [errorMsg, setErrorMsg] = useState({});
@@ -151,7 +151,7 @@ const ProductAdmin=()=>{
         let error = {};
         let isValid = true;
 
-        if(!gradesInput.grades.trim()){
+        if(!gradesInput.grade.trim()){
             error.gradesError = "Grade is Required";
             isValid = false;
         }
@@ -196,7 +196,7 @@ const ProductAdmin=()=>{
             ]);
 
             setGradesInput({
-                grades: ""
+                grade: ""
             });
 
             setErrorMsg({
@@ -225,7 +225,7 @@ const ProductAdmin=()=>{
         setSpecificationlist([]);
 
         setGradesInput({
-            grades: ""
+            grade: ""
         });
 
         setGradeslist([]);
@@ -352,7 +352,7 @@ const ProductAdmin=()=>{
         });
         
         setSpecificationlist(item.specifications || []); 
-        setGradeslist(item.grades || []);
+        setGradeslist(item.grade || []);
     }
 
     function cancelUpdate(){
@@ -407,6 +407,8 @@ const ProductAdmin=()=>{
                             errorMsg.productnameError &&
                             <p className="text-red-500 text-sm">{errorMsg.productnameError}</p>
                         }
+
+                        <label>Product price</label>
 
                         <label className="block text-sm font-medium text-gray-800 mb-2">Packaging Detail</label>
                         <input type="text" name="packagingdetail" value={productInput.packagingdetail} onChange={handleProductInput} placeholder="Enter packaging detail" 
@@ -497,7 +499,7 @@ const ProductAdmin=()=>{
                         </button>
                     </div>
 
-                    <input type="text" name="grades" placeholder="Enter grade" value={gradesInput.grades} onChange={handleGradesInput} 
+                    <input type="text" name="grade" placeholder="Enter grade" value={gradesInput.grade} onChange={handleGradesInput} 
                     className={`w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700 focus:outline-none${errorMsg.gradesError ? " border-red-500" : "border-gray-300"}`}/>
                     {
                         errorMsg.gradesError &&
@@ -518,7 +520,7 @@ const ProductAdmin=()=>{
                                         return (
                                             <tr key={index}>
                                                 <td className="px-5 py-4 border border-gray-300">{index+1}</td>
-                                                <td className="px-5 py-4 border border-gray-300">{list.grades}</td>
+                                                <td className="px-5 py-4 border border-gray-300">{list.grade}</td>
                                             </tr>
                                         );
 
@@ -583,24 +585,24 @@ const ProductAdmin=()=>{
                             <tbody>
 
                                 {
-                                    productList.map((list, index)=>{
+                                    productList.map((fetchlist, index)=>{
 
-                                        if(list.category_id == activeCategoryTab){
+                                        if(fetchlist.category_id == activeCategoryTab){
 
                                             return(
                                                 <tr key={index}>
 
                                                     <td className="text-left px-5 py-3 border border-gray-300">{index + 1}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{list.category_name}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{list.product_name}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{list.packaging_detail}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{list.hs_code}</td>
+                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.category_name}</td>
+                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.product_name}</td>
+                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.packaging_detail}</td>
+                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.hs_code}</td>
                                                     <td className="text-left px-5 py-3 border border-gray-300">
-                                                        <img src={`http://localhost:9000/uploads/${list.image}`} alt="product" className="w-14 h-14 object-cover rounded"/>
+                                                        <img src={`http://localhost:9000/uploads/${fetchlist.image}`} alt="product" className="w-14 h-14 object-cover rounded"/>
                                                     </td>
                                                     <td className="text-left px-5 py-3 border border-gray-300">
                                                         {
-                                                            list.specifications.map((item, index)=>(
+                                                            fetchlist.specifications.map((item, index)=>(
                                                                 <div key={index}>
                                                                     {item.title} : {item.value}
                                                                 </div>
@@ -609,15 +611,15 @@ const ProductAdmin=()=>{
                                                     </td>
                                                     <td className="text-left px-5 py-3 border border-gray-300">
                                                         {
-                                                            list.grades.map((item, index)=>(
+                                                            fetchlist.grades.map((item, index)=>(
                                                                 <div key={index}>
-                                                                    {item.grades}
+                                                                    {item.grade}
                                                                 </div>
                                                             ))
                                                         }
                                                     </td>
                                                     <td className="text-left px-5 py-3 border border-gray-300">
-                                                        <button type="button" onClick={()=>editProduct(list)}className="px-4 py-1 rounded-lg bg-blue-600 text-white cursor-pointer">
+                                                        <button type="button" onClick={()=>editProduct(fetchlist)}className="px-4 py-1 rounded-lg bg-blue-600 text-white cursor-pointer">
                                                             Edit
                                                         </button>
                                                     </td>
