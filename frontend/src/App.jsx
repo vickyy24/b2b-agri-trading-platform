@@ -23,8 +23,8 @@ const App=()=> {
                         <Navbar />
                         <Outlet />
                         <Footer />
-                    </>
-                }>
+                    </>}>
+                    
                     {/* child routes rendered inside Outlet */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />

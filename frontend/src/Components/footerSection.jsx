@@ -23,13 +23,13 @@ const Footer=()=>{
                             <li>
                                <Link to="/" className="text-gray-300 hover:text-white"> Home</Link></li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">About Us</Link>
+                                <Link to="/about" className="text-gray-300 hover:text-white">About Us</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Commodities</Link>
+                                <Link to="/commodities" className="text-gray-300 hover:text-white">Commodities</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Services</Link>
+                                <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
                             </li>
                             <li>
                                 <Link to="" className="text-gray-300 hover:text-white">Trade Process</Link>
