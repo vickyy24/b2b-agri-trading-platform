@@ -90,10 +90,6 @@ async function updateProduct(req, res){
 
         const oldImagePath = `uploads/${oldImage[0].image}`;
 
-        if(fs.existsSync(oldImagePath)){
-            fs.unlinkSync(oldImagePath);
-        }
-
         const [result] = await con.query(
             `SELECT * FROM Products_table
             WHERE LOWER(product_name)=LOWER(?) AND product_id!=?`,[d.ProductName, productid]
@@ -109,10 +105,19 @@ async function updateProduct(req, res){
                 SET category_id=?, product_name=?, product_price=?, packaging_detail=?, hs_code=?, image=? 
                 WHERE product_id=?`,[d.CategoryId,d.ProductName,d.ProductPrice, d.PackagingDetail,d.HsCode,imagename,productid]
             );
+
+            if(fs.existsSync(oldImagePath)){
+                fs.unlinkSync(oldImagePath);
+            }
+            
             res.status(200).send({message: "Product Updated Successfully"});
         }
     }
     catch(error){
+        if(req.file && fs.existsSync(`uploads/${req.file.filename}`)){
+            fs.unlinkSync(`uploads/${req.file.filename}`);
+        }
+        console.log(error.message)
         res.status(500).send({message: error.message});
     }
 }
