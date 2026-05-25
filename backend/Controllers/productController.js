@@ -17,7 +17,7 @@ async function addProduct(req,res){
         else{
 
             const [productdata] = await con.query(
-                "insert into Products_table(category_id, product_name, image, packaging_detail, hs_code) values(?,?,?,?,?)",[d.CategoryId, d.ProductName, imagename, d.PackagingDetail, d.HsCode]
+                "insert into Products_table(category_id, product_name, product_price, image, packaging_detail, hs_code) values(?,?,?,?,?,?)",[d.CategoryId, d.ProductName, d.ProductPrice, imagename, d.PackagingDetail, d.HsCode]
             );
 
             const productid = productdata.insertId;
@@ -51,7 +51,7 @@ async function getProducts(req, res){
     try{
 
         const [result] = await con.query(
-            `SELECT p.product_id, p.category_id, c.category_name, p.product_name,p.packaging_detail,p.hs_code,p.image
+            `SELECT p.product_id, p.category_id, c.category_name, p.product_name, p.product_price, p.packaging_detail,p.hs_code,p.image
             FROM Products_table p
             JOIN Categories_table c
             ON p.category_id = c.category_id`
@@ -106,8 +106,8 @@ async function updateProduct(req, res){
 
             await con.query(
                 `UPDATE Products_table
-                SET category_id=?, product_name=?, packaging_detail=?, hs_code=?, image=? 
-                WHERE product_id=?`,[d.CategoryId,d.ProductName,d.PackagingDetail,d.HsCode,imagename,productid]
+                SET category_id=?, product_name=?, product_price=?, packaging_detail=?, hs_code=?, image=? 
+                WHERE product_id=?`,[d.CategoryId,d.ProductName,d.ProductPrice, d.PackagingDetail,d.HsCode,imagename,productid]
             );
             res.status(200).send({message: "Product Updated Successfully"});
         }
