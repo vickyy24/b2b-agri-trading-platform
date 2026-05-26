@@ -4,7 +4,7 @@ const multer = require("multer");
 const path = require("path");
 
 const {addCategory, getCategories, updateCategory} = require("./Controllers/categoryController");
-const {addProduct, getProducts, updateProduct} = require("./Controllers/productController");
+const {addProduct, getProducts,getProductById, updateProduct} = require("./Controllers/productController");
 
 const app = express();
 
@@ -39,8 +39,9 @@ app.post("/addproduct", upload.single("Image"), addProduct);
 
 app.get("/getproducts", getProducts);
 
-app.put("/updateproduct/:productid", upload.single("Image"), updateProduct);
+app.get("/getproduct/:productid", getProductById);
 
+app.put("/updateproduct/:productid", upload.single("Image"), updateProduct);
 
 app.listen(9000, function(){
     console.log("Server Started");

@@ -122,4 +122,42 @@ async function updateProduct(req, res){
     }
 }
 
-module.exports = {addProduct, getProducts, updateProduct};
+//Get API Handling fuction for single products details
+async function getProductById(req, res){
+
+    try{
+
+        const productid = req.params.productid;
+
+        const [result] = await con.query(
+            `SELECT product_id, product_name, product_price, packaging_detail, hs_code, image
+            FROM Products_table
+            WHERE product_id=?`,
+            [productid]
+        );
+
+        const [Specifications] = await con.query(
+            "SELECT title, value FROM Product_Specification_table WHERE product_id=?",
+            [productid]
+        );
+
+        const [Grades] = await con.query(
+            "SELECT grade FROM Quality_Grades_table WHERE product_id=?",
+            [productid]
+        );
+
+        result[0].specifications = Specifications;
+        result[0].grades = Grades;
+
+        res.status(200).send(result[0]);
+
+    }
+    catch(error){
+
+        res.status(500).send({message: error.message});
+
+    }
+
+}
+
+module.exports = {addProduct, getProducts, updateProduct, getProductById};
