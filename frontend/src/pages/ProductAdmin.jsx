@@ -6,6 +6,7 @@ const ProductAdmin=()=>{
     const [productInput, setProductInput] = useState({
         category: "",
         productname: "",
+        productprice:"",
         packagingdetail: "",
         hscode: "",
         image: null
@@ -38,6 +39,7 @@ const ProductAdmin=()=>{
     const errorFieldMap = {
         category: "categoryError",
         productname: "productnameError",
+        productprice:"productpriceError",
         packagingdetail: "packagingdetailError",
         hscode: "hscodeError",
         image: "imageError",
@@ -92,6 +94,11 @@ const ProductAdmin=()=>{
 
         if(!productInput.productname.trim()){
             error.productnameError = "Product Name is Required";
+            isValid = false;
+        }
+
+        if(!productInput.productprice.trim()){
+            error.productpriceError = "Product Price is Required";
             isValid = false;
         }
 
@@ -212,6 +219,7 @@ const ProductAdmin=()=>{
         setProductInput({
             category: "",
             productname: "",
+            productprice: "",
             packagingdetail: "",
             hscode: "",
             image: null
@@ -239,8 +247,9 @@ const ProductAdmin=()=>{
         if(validateProduct()){
 
             const formData = new FormData();
-            formData.append("ProductName", productInput.productname);
             formData.append("CategoryId", productInput.category);
+            formData.append("ProductName", productInput.productname);
+            formData.append("ProductPrice", productInput.productprice);
             formData.append("PackagingDetail", productInput.packagingdetail);
             formData.append("HsCode", productInput.hscode);
             formData.append("Image", productInput.image);
@@ -346,13 +355,14 @@ const ProductAdmin=()=>{
         setProductInput({
             category: item.category_id,
             productname: item.product_name,
+            productprice:item.product_price,
             packagingdetail: item.packaging_detail,
             hscode: item.hs_code,
             image: null
         });
         
         setSpecificationlist(item.specifications || []); 
-        setGradeslist(item.grade || []);
+        setGradeslist(item.grades || []);
     }
 
     function cancelUpdate(){
@@ -408,7 +418,13 @@ const ProductAdmin=()=>{
                             <p className="text-red-500 text-sm">{errorMsg.productnameError}</p>
                         }
 
-                        <label>Product price</label>
+                        <label  className="block text-sm font-medium text-gray-800 mb-2">Product price</label>
+                        <input type="text" name="productprice" value={productInput.productprice} onChange={handleProductInput} placeholder="Enter Product Price"
+                        className={`w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-green-700 focus:outline-none${errorMsg.productpriceError ? " border-red-500" : "border-gray-300"}`}/>
+                        {
+                            errorMsg.productnameError &&
+                            <p className="text-red-500 text-sm">{errorMsg.productpriceError}</p>
+                        }
 
                         <label className="block text-sm font-medium text-gray-800 mb-2">Packaging Detail</label>
                         <input type="text" name="packagingdetail" value={productInput.packagingdetail} onChange={handleProductInput} placeholder="Enter packaging detail" 
@@ -568,18 +584,19 @@ const ProductAdmin=()=>{
                     <h2 className="text-2xl font-semibold text-[#8b4513] mb-1"> Product Data</h2>
                     <div className="overflow-x-auto">
 
-                        <table className="w-full table-fixed">
+                        <table className="w-full">
                             <thead className="bg-[#f3f5f2]">
                                 <tr>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Sr No</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Category</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Product Name</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Packaging Detail</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">HS Code</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Image</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Specifications</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Grades</th>
-                                    <th className="text-left px-5 py-4 border border-gray-300">Action</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Sr No</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Category</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Product Name</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Product Price</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Packaging Detail</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">HS Code</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Image</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Specifications</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Grades</th>
+                                    <th className="text-left px-3 py-3 border border-gray-300">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -592,15 +609,16 @@ const ProductAdmin=()=>{
                                             return(
                                                 <tr key={index}>
 
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{index + 1}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.category_name}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.product_name}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.packaging_detail}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">{fetchlist.hs_code}</td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{index + 1}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{fetchlist.category_name}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{fetchlist.product_name}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{fetchlist.product_price}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{fetchlist.packaging_detail}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">{fetchlist.hs_code}</td>
+                                                    <td className="text-left px-3 py-3 border border-gray-300">
                                                         <img src={`http://localhost:9000/uploads/${fetchlist.image}`} alt="product" className="w-14 h-14 object-cover rounded"/>
                                                     </td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">
+                                                    <td className="text-left px-3 py-3 border border-gray-300">
                                                         {
                                                             fetchlist.specifications.map((item, index)=>(
                                                                 <div key={index}>
@@ -609,7 +627,7 @@ const ProductAdmin=()=>{
                                                             ))
                                                         }
                                                     </td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">
+                                                    <td className="text-left px-3 py-3 border border-gray-300">
                                                         {
                                                             fetchlist.grades.map((item, index)=>(
                                                                 <div key={index}>
@@ -618,7 +636,7 @@ const ProductAdmin=()=>{
                                                             ))
                                                         }
                                                     </td>
-                                                    <td className="text-left px-5 py-3 border border-gray-300">
+                                                    <td className="text-left px-3 py-3 border border-gray-300">
                                                         <button type="button" onClick={()=>editProduct(fetchlist)}className="px-4 py-1 rounded-lg bg-blue-600 text-white cursor-pointer">
                                                             Edit
                                                         </button>
@@ -626,7 +644,6 @@ const ProductAdmin=()=>{
                                                 </tr>
                                             )
                                         }
-
                                     })
                                 }
                             </tbody>
