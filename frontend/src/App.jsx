@@ -11,6 +11,8 @@ import Footer from "./Components/footerSection";
 import Admin from "./pages/AdminPanel";
 import CategoryAdmin from "./pages/CategoryAdmin";
 import ProductAdmin from "./pages/ProductAdmin";
+import ViewProduct from "./pages/ViewProduct";
+import Cart from "./pages/Cart";
 
 const App=()=> {
     return(
@@ -29,10 +31,12 @@ const App=()=> {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/commodities" element={<Commodities />} />
+                    <Route path="/view-product/:productid" element={<ViewProduct/>}/>
                     <Route path="/services" element={<Services />} />
                     <Route path="/trade-process" element={<TradeProcess />} />
                     <Route path="/global-reach" element={<GlobalReach />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/cart" element={<Cart/>}/>
 
                 </Route>
                 <Route path="/admin" element={<Admin />}>
