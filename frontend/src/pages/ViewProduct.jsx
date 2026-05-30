@@ -6,7 +6,7 @@ const ViewProduct = () => {
 
     const params = useParams();
 
-    const [product, setProduct] = useState(null);
+    const [productdata, setProductdata] = useState(null);
 
     useEffect(() => {
 
@@ -20,27 +20,23 @@ const ViewProduct = () => {
     const getProductById = async () => {
 
         try{
-
             const response = await axios({
-
                 url: `http://localhost:9000/getproduct/${params.productid}`,
                 method: "GET"
 
             });
 
-            setProduct(response.data);
+            setProductdata(response.data);
 
         }
         catch(error){
-
             console.log(error.message);
-
         }
 
     }
 
-
-    if(product === null){
+    
+    if(productdata === null){
 
         return(
 
@@ -56,14 +52,13 @@ const ViewProduct = () => {
 
     }
 
-
     return(
 
-        <section className="bg-linear-to-b from-[#2d3748] via-[#d8d2ad] to-[#f5f5dc] pt-28">
+        <section className="bg-linear-to-b from-[#2d3748] via-[#d8d2ad] to-[#f5f5dc] pt-30 pb-5">
 
-            <div className="max-w-7xl mx-auto px-4 pb-16">
+            <div className="max-w-7xl mx-auto px-4">
 
-                <div className="bg-white rounded-3xl shadow-xl border border-[#edf2ed] overflow-hidden">
+                <div className="bg-white rounded-xl shadow-xl border border-[#edf2ed] overflow-hidden">
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-5 md:p-10">
 
@@ -71,13 +66,12 @@ const ViewProduct = () => {
                         <div className="bg-[#f8faf7] rounded-3xl p-5 md:p-8 flex justify-center items-center">
 
                             <img
-                                src={`http://localhost:9000/uploads/${product.image}`}
-                                alt={product.product_name}
+                                src={`http://localhost:9000/uploads/${productdata.image}`}
+                                alt={productdata.product_name}
                                 className="w-full max-w-md h-80 md:h-112 object-contain hover:scale-105 duration-300"
                             />
 
                         </div>
-
 
                         {/* Product Details Section */}
                         <div className="flex flex-col justify-center">
@@ -86,74 +80,72 @@ const ViewProduct = () => {
                                 Premium Agricultural Commodity
                             </p>
 
-                            <h1 className="text-3xl md:text-5xl font-bold text-[#2d3748] leading-tight mb-5">
-                                {product.product_name}
+                            <h1 className="text-3xl md:text-4xl font-bold text-[#2d3748] leading-tight mb-5">
+                                {productdata.product_name}
                             </h1>
-
 
                             {/* Price Section */}
                             <div className="flex items-end gap-2 mb-8">
 
-                                <h2 className="text-3xl md:text-4xl font-bold text-[#8b4513]">
+                                <h2 className="text-2xl md:text-3xl font-bold text-[#8b4513]">
 
-                                    ₹ {Number(product.product_price).toLocaleString("en-IN")}
+                                    ₹ {Number(productdata.product_price).toLocaleString("en-IN")}
 
                                 </h2>
 
-                                <p className="text-[8px] md:text-xs text-gray-500 mb-1">
+                                <p className="text-[8px] md:text-xs text-gray-500">
                                     Incl. all taxes
                                 </p>
 
+                                <button className="ml-57 bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold rounded-xl shadow-md hover:bg-teal-700 transition-all duration-300 cursor-pointer">
+                                    Add To Cart
+                                </button>
+
                             </div>
 
-
-                            {/* Product Info */}
                             <div className="flex flex-wrap gap-4 mb-8">
 
+                                {/* Packaging Details */}
                                 <div className="bg-[#f5f5dc] border border-[#e6d8b6] rounded-2xl px-4 py-3 min-w-36">
 
-                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wide mb-1">
+                                    <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide mb-1">
                                         Packaging
                                     </p>
 
-                                    <p className="text-sm md:text-base font-semibold text-[#2d3748]">
-                                        {product.packaging_detail}
+                                    <p className="text-xs md:text-sm font-semibold text-[#2d3748]">
+                                        {productdata.packaging_detail}
                                     </p>
 
                                 </div>
 
-
+                                {/* HS Code */}
                                 <div className="bg-[#f5f5dc] border border-[#e6d8b6] rounded-2xl px-4 py-3 min-w-36">
 
-                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wide mb-1">
+                                    <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide mb-1">
                                         HS Code
                                     </p>
 
-                                    <p className="text-sm md:text-base font-semibold text-[#2d3748]">
-                                        {product.hs_code}
+                                    <p className="text-xs md:text-sm font-semibold text-[#2d3748]">
+                                        {productdata.hs_code}
                                     </p>
 
                                 </div>
 
                             </div>
-
 
                             {/* Specifications */}
                             <div className="mb-8">
 
-                                <h3 className="text-lg md:text-xl font-bold text-[#2d3748] mb-4">
+                                <h3 className="text-base md:text-lg font-bold text-[#2d3748] mb-4">
                                     Product Specifications
                                 </h3>
 
                                 <div className="space-y-3">
 
                                     {
-                                        product.specifications.map((list, index)=>(
+                                        productdata.specifications.map((list, index)=>(
 
-                                            <div
-                                                key={index}
-                                                className="flex justify-between items-center border-b border-gray-200 pb-2"
-                                            >
+                                            <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
 
                                                 <p className="text-sm md:text-base text-gray-600">
                                                     {list.title}
@@ -172,18 +164,16 @@ const ViewProduct = () => {
 
                             </div>
 
-
                             {/* Grades */}
                             <div className="mb-8">
 
-                                <h3 className="text-lg md:text-xl font-bold text-[#2d3748] mb-4">
+                                <h3 className="text-base md:text-lg font-bold text-[#2d3748] mb-4">
                                     Available Grades
                                 </h3>
 
-                                <div className="flex flex-wrap gap-3">
-
+                                <div className="flex flex-col items-start gap-3">
                                     {
-                                        product.grades.map((list, index)=>(
+                                        productdata.grades.map((list, index)=>(
 
                                             <div
                                                 key={index}
@@ -201,13 +191,10 @@ const ViewProduct = () => {
 
                             </div>
 
-
                             {/* Add To Cart Button */}
                             <div>
 
-                                <button className="bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold rounded-xl shadow-md hover:bg-teal-700 transition-all duration-300 cursor-pointer">
-                                    Add To Cart
-                                </button>
+                                
 
                             </div>
 
