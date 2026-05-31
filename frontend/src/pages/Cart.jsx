@@ -143,48 +143,63 @@ const Cart = () => {
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div>
-                        <div className="bg-white rounded-xl shadow-xl border border-[#edf2ed] p-4 max-w-full sticky top-30">
+                    <div className="flex flex-col gap-4 sticky top-30 self-start">
+                        
+                        <div className="bg-white rounded-xl shadow-xl border border-[#edf2ed] p-4 max-w-full">
 
-                            <table>
+                            <h5 className="text-lg text-[#8b4513] font-semibold mb-2">Order Details:</h5>
+
+                            <table className="w-full table-fixed">
                                 <thead>
                                     <tr>
-                                        <th className="text-base font-semibold text-[#2d3748]"> Product</th>
-
-                                        <th className="text-base font-semibold text-[#2d3748]">Quantity</th>
-
-                                        <th className="text-base font-semibold text-[#2d3748]"> Price</th>
+                                        <th className="w-full border border-gray-300 px-2 py-3 text-left text-lg font-semibold text-[#2f855a]">
+                                            Product
+                                        </th>
+                                        <th className="w-full border border-gray-300 px-2 py-3 text-left text-lg font-semibold text-[#2f855a]">
+                                            Quantity
+                                        </th>
+                                        <th className="w-full border border-gray-300 px-2 py-3 text-left text-lg font-semibold text-[#2f855a]">
+                                            Price
+                                        </th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    {
+                                        cartItems.map((item, index) => (
+                                            <tr key={index}>
 
-                                {
-                                    cartItems.map((item,index)=>(
-                                        
-                                        <tbody key={index}>
-                                            <tr>
-                                                <td className="">{item.product_name}</td>
-                                                <td className="">{item.quantity}x</td>
-                                                <td className="">{Number(item.product_price).toLocaleString("en-IN")}</td>
+                                                <td className="w-full border border-gray-300 text-gray-700 px-2 py-3 text-left">{item.product_name}</td>
+                                                <td className="w-full border border-gray-300 text-gray-700 px-2 py-3 text-left">{item.quantity}x</td>
+                                                <td className="w-full border border-gray-300 text-gray-700 px-2 py-3 text-left">₹ {Number(item.product_price).toLocaleString("en-IN")}</td>
                                             </tr>
-                                        </tbody>
-                                    ))
-                                }
-                                <tfoot className="border-t">
+
+                                        ))
+                                    }
+
+                                </tbody>
+                                <tfoot>
+
                                     <tr>
-                                        <td className=""></td>
-                                        <td className="text-base font-semibold text-[#2d3748]">{totalItems}</td>
-                                        <td className="text-base font-bold text-[#8b4513]">₹ {totalAmount.toLocaleString("en-IN")}</td>
+                                        <td className="w-full px-2 py-3 text-left"></td>
+                                        <td className="w-full border border-gray-300 px-2 py-3 text-right text-base font-bold text-[#2d3748]">
+                                            Total :{/* {totalItems} */}
+                                        </td>
+                                        <td className="w-full border border-gray-300 px-2 py-3 text-left text-base font-semibold text-[#8b4513]">
+                                            ₹ {totalAmount.toLocaleString("en-IN")}
+                                        </td>
                                     </tr>
+
                                 </tfoot>
+
                             </table>
                             
                         </div>
-                        <div className="bg-white rounded-xl shadow-xl border border-[#edf2ed] p-4 max-w-full sticky top-30">
-                                
-                        </div>
+
+                        <button type="button" className="w-full border border-[#8b4513] bg-white p-2 flex justify-center items-center gap-2 text-lg text-[#8b4513] font-semibold rounded-xl hover:bg-[#8b4513] hover:text-white shadow-xl cursor-pointer"  >
+                            Place Order <HiOutlineLightningBolt />
+                        </button>
 
                     </div>
-
                 </div>
 
             </div>
