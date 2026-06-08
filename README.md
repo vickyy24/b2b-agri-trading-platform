@@ -1,34 +1,37 @@
 # 🌾 B2B Agri Trading Platform
 
-A full-stack agricultural trading platform built using React.js, Redux Toolkit, Node.js, Express.js, and MySQL. The platform provides commodity management, product catalog management, product specifications, quality grades, shopping cart functionality, and administrative tools for managing categories and products.
+A full-stack agricultural trading platform built using React.js, Redux Toolkit, Node.js, Express.js, and MySQL. The platform enables users to browse agricultural commodities, view detailed product information, manage shopping cart operations, and explore commodity offerings through a responsive user interface. It also provides an administrative dashboard for managing categories, products, specifications, and quality grades.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-### User Features
+## Customer Features
 
-- Browse commodities and products
-- View product details
+- Browse agricultural commodities and products
+- View detailed product information
+- Dynamic product detail pages
 - Product category filtering
-- Shopping cart management
+- Shopping cart functionality
 - Increase and decrease product quantity
 - Remove products from cart
 - Automatic cart total calculation
 - Cart persistence using Local Storage
-- Responsive user interface
 - Commodity inquiry modal
+- Responsive user interface
 
-### Admin Features
+---
 
-#### Category Management
+## Admin Features
 
-- Add Category
+### Category Management
+
+- Add Categories
 - View Categories
 - Update Categories
 - Duplicate Category Validation
 
-#### Product Management
+### Product Management
 
 - Add Products
 - View Products
@@ -40,9 +43,9 @@ A full-stack agricultural trading platform built using React.js, Redux Toolkit, 
 
 ---
 
-## 🛠 Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
 - React.js
 - Redux Toolkit
@@ -51,7 +54,7 @@ A full-stack agricultural trading platform built using React.js, Redux Toolkit, 
 - Tailwind CSS
 - React Icons
 
-### Backend
+## Backend
 
 - Node.js
 - Express.js
@@ -63,7 +66,7 @@ A full-stack agricultural trading platform built using React.js, Redux Toolkit, 
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 B2B-Agri-Trading-Platform
@@ -77,13 +80,15 @@ B2B-Agri-Trading-Platform
 │   │   └── productController.js
 │   │
 │   ├── uploads
+│   │
 │   ├── node_modules
+│   │
 │   ├── .env
 │   ├── .gitignore
 │   ├── package.json
 │   ├── package-lock.json
-|   ├── Database.sql
-│   └── server.js
+│   ├── server.js
+│   └── Database.sql
 │
 ├── frontend
 │   ├── public
@@ -92,29 +97,8 @@ B2B-Agri-Trading-Platform
 │   ├── src
 │   │   ├── assets
 │   │   ├── Components
-│   │   │   ├── CommonHero.jsx
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── footerSection.jsx
-│   │   │   └── QuoteModal.jsx
-│   │   │
 │   │   ├── pages
-│   │   │   ├── Home.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Commodities.jsx
-│   │   │   ├── ViewProduct.jsx
-│   │   │   ├── Cart.jsx
-│   │   │   ├── AdminPanel.jsx
-│   │   │   ├── CategoryAdmin.jsx
-│   │   │   ├── ProductAdmin.jsx
-│   │   │   ├── Services.jsx
-│   │   │   ├── TradeProcess.jsx
-│   │   │   ├── GlobalReach.jsx
-│   │   │   └── Contact.jsx
-│   │   │
 │   │   ├── Redux
-│   │   │   ├── CartSlice.js
-│   │   │   └── Store.js
-│   │   │
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── main.css
@@ -130,22 +114,83 @@ B2B-Agri-Trading-Platform
 
 ---
 
-## 🗄 Database
+# 🗄️ Database Design
 
-Database schema is available in:
+Database Name:
 
-```text
-Database.sql
+```sql
+padmayog_agrotech
 ```
 
-Tables used:
+---
 
-- Categories_table
-- Products_table
-- Product_Specification_table
-- Quality_Grades_table
+## Categories_table
 
-### Database Relationships
+Stores commodity categories.
+
+| Column Name | Data Type |
+|------------|-----------|
+| category_id | INT (PK) |
+| category_name | VARCHAR(255) |
+| isactive | VARCHAR(50) |
+
+---
+
+## Products_table
+
+Stores commodity product information.
+
+| Column Name | Data Type |
+|------------|-----------|
+| product_id | INT (PK) |
+| category_id | INT (FK) |
+| product_name | VARCHAR(255) |
+| image | VARCHAR(500) |
+| packaging_detail | VARCHAR(255) |
+| hs_code | VARCHAR(100) |
+| product_price | DECIMAL(10,2) |
+
+---
+
+## Product_Specification_table
+
+Stores specifications associated with products.
+
+| Column Name | Data Type |
+|------------|-----------|
+| product_specification_id | INT (PK) |
+| product_id | INT (FK) |
+| title | VARCHAR(255) |
+| value | VARCHAR(500) |
+
+### Examples
+
+- Moisture
+- Purity
+- Protein
+- Foreign Matter
+
+---
+
+## Quality_Grades_table
+
+Stores quality grades associated with products.
+
+| Column Name | Data Type |
+|------------|-----------|
+| qualitygrade_id | INT (PK) |
+| product_id | INT (FK) |
+| grade | VARCHAR(255) |
+
+### Examples
+
+- Premium
+- Standard
+- Grade A
+
+---
+
+# 🔗 Database Relationships
 
 ```text
 Categories_table
@@ -153,51 +198,60 @@ Categories_table
         ▼
 Products_table
        │
-       ├── Product_Specification_table
+       ├────────► Product_Specification_table
        │
-       └── Quality_Grades_table
+       └────────► Quality_Grades_table
 ```
 
 ---
 
-## 🔌 API Endpoints
+# 🔌 API Endpoints
 
-### Category APIs
+## Category APIs
 
-```http
-POST /addcategory
-GET /getcategories
-PUT /updatecategory/:categoryid
-```
-
-### Product APIs
-
-```http
-POST /addproduct
-GET /getproducts
-GET /getproduct/:productid
-PUT /updateproduct/:productid
-```
+| Method | Endpoint |
+|----------|----------|
+| POST | /addcategory |
+| GET | /getcategories |
+| PUT | /updatecategory/:categoryid |
 
 ---
 
-## 🛒 Cart Functionality
+## Product APIs
+
+| Method | Endpoint |
+|----------|----------|
+| POST | /addproduct |
+| GET | /getproducts |
+| GET | /getproduct/:productid |
+| PUT | /updateproduct/:productid |
+
+---
+
+# 🛒 Cart Management
 
 Implemented using Redux Toolkit.
 
-Features:
+### Features
 
 - Add Product to Cart
 - Increase Quantity
 - Decrease Quantity
 - Remove Product
-- Calculate Total Amount
+- Automatic Total Amount Calculation
 - Local Storage Persistence
 - Centralized State Management
 
+### Redux Actions
+
+- addToCart
+- incrementQuantity
+- decrementQuantity
+- removeFromCart
+
 ---
 
-## 📦 Product Management
+# 📦 Product Management
 
 Each product contains:
 
@@ -209,25 +263,78 @@ Each product contains:
 - Product Specifications
 - Quality Grades
 
+### Product Specification Example
+
+```json
+[
+  {
+    "title": "Moisture",
+    "value": "12%"
+  },
+  {
+    "title": "Purity",
+    "value": "99%"
+  }
+]
+```
+
+### Product Grade Example
+
+```json
+[
+  {
+    "grade": "Premium"
+  },
+  {
+    "grade": "Standard"
+  }
+]
+```
+
 ---
 
-## 📷 Image Uploads
+# 📷 Image Upload Functionality
 
 Implemented using Multer.
 
-Features:
+### Features
 
-- Product image upload
-- Unique image naming
-- Product image update support
-- Old image removal during updates
-- Static image serving through Express
+- Product Image Upload
+- Unique Image Naming Using Timestamp
+- Product Image Updates
+- Automatic Removal Of Previous Images During Updates
+- Static Image Serving Through Express
 
 ---
 
-## ⚙ Environment Variables
+# 🌐 Frontend Routes
 
-Create a `.env` file inside the backend directory.
+```text
+/
+├── Home
+├── About
+├── Commodities
+├── View Product
+├── Services
+├── Trade Process
+├── Global Reach
+├── Contact
+└── Cart
+```
+
+### Admin Routes
+
+```text
+/admin
+├── category
+└── product
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file inside the `backend` folder.
 
 ```env
 DB_HOST=localhost
@@ -238,61 +345,127 @@ DB_NAME=padmayog_agrotech
 
 ---
 
-## 🚀 Installation
+# 🗄️ Database Setup
 
-### Clone Repository
+1. Open MySQL Workbench.
+2. Navigate to:
+
+```text
+backend/Database.sql
+```
+
+3. Execute the SQL script.
+
+This will create:
+
+- Categories_table
+- Products_table
+- Product_Specification_table
+- Quality_Grades_table
+
+---
+
+# 📥 Clone Repository
 
 ```bash
 git clone <repository-url>
 ```
 
-### Backend Setup
+Navigate to the project directory:
+
+```bash
+cd B2B-Agri-Trading-Platform
+```
+
+---
+
+# 🚀 Backend Setup
+
+Navigate to backend:
 
 ```bash
 cd backend
+```
 
+Install dependencies:
+
+```bash
 npm install
+```
 
+Start the server:
+
+```bash
 node server.js
 ```
 
 Backend runs on:
 
-```bash
+```text
 http://localhost:9000
 ```
 
-### Frontend Setup
+---
+
+# 🚀 Frontend Setup
+
+Open a new terminal and navigate to frontend:
 
 ```bash
 cd frontend
+```
 
+Install dependencies:
+
+```bash
 npm install
+```
 
+Run the development server:
+
+```bash
 npm run dev
 ```
 
 Frontend runs on:
 
-```bash
+```text
 http://localhost:5173
 ```
 
 ---
 
-## 🎯 Implemented Functionalities
+# ▶️ Running The Application
+
+### Terminal 1
+
+```bash
+cd backend
+node server.js
+```
+
+### Terminal 2
+
+```bash
+cd frontend
+npm run dev
+```
+
+---
+
+# 🎯 Implemented Functionalities
 
 - React Component Architecture
 - Dynamic Routing
 - Redux Toolkit State Management
 - REST API Development
-- MySQL Integration
+- MySQL Database Integration
 - CRUD Operations
 - Product Management
 - Category Management
 - Product Specifications Management
 - Product Quality Grades Management
-- Image Upload Handling
+- Product Image Upload Handling
 - Axios API Integration
 - Form Validation
 - Error Handling
@@ -301,7 +474,7 @@ http://localhost:5173
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Vikas Sonatkke**
 
