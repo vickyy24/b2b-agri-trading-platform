@@ -19,11 +19,8 @@ const CartSlice = createSlice({
 
             //all data of product coming is being pushed into cartitmes[]
             state.cartItems.push({
-
                 ...action.payload,
-
                 quantity: 1
-
             });
 
             state.totalAmount += Number(action.payload.product_price);
@@ -110,15 +107,6 @@ const CartSlice = createSlice({
 
 });
 
-
-export const {
-
-    addToCart,
-    incrementQuantity,
-    decrementQuantity,
-    removeFromCart
-
-} = CartSlice.actions;
-
+export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart } = CartSlice.actions;
 
 export default CartSlice.reducer;

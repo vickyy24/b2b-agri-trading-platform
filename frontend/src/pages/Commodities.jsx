@@ -176,16 +176,13 @@ const Commodities=()=>{
 
                                     return(
 
-                                        <div
-                                            key={index}
+                                        <div key={index}
                                             className="p-4 md:p-6 h-full border border-gray-200 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
                                         >
 
                                             {/* Product Image */}
                                             <div className="flex justify-center gap-18 mb-2 h-75 border-b border-gray-300">
-
                                                 <img src={`http://localhost:9000/uploads/${list.image}`} alt="productImage" className="w-60 h-75"/>
-
                                             </div>
 
                                             {/* Product Name */}
@@ -239,11 +236,9 @@ const Commodities=()=>{
                                                         <button onClick={ ()=>{handleDecrement(list.product_id)} } className="w-full bg-green-800 hover:bg-green-700 text-sm md:text-base text-white font-semibold rounded-l-md duration-300 cursor-pointer">
                                                             -
                                                         </button>
-
                                                         <div className="flex w-full justify-center items-center text-xs md:text-sm text-white font-semibold bg-green-800">
                                                             {cartProduct.quantity}
                                                         </div>
-
                                                         <button onClick={ ()=>{handleIncrement(list.product_id)} } className="w-full bg-green-800 hover:bg-green-700 text-sm md:text-base text-white font-semibold rounded-r-md duration-300 cursor-pointer">
                                                             +
                                                         </button>

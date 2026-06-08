@@ -1,8 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const ViewProduct = () => {
+
+    // const dispatch = useDispatch()
+
+    //  const cartItems = useSelector(
+    //     (state)ttt
+    //  )
 
     const params = useParams();
 
@@ -11,11 +18,13 @@ const ViewProduct = () => {
     useEffect(() => {
 
         window.scrollTo(0, 0);
-
         getProductById();
 
     }, [params.productid]);
 
+    const getCartProduct=(product_id)=>{
+
+    }
 
     const getProductById = async () => {
 
@@ -27,7 +36,6 @@ const ViewProduct = () => {
             });
 
             setProductdata(response.data);
-
         }
         catch(error){
             console.log(error.message);
@@ -35,23 +43,19 @@ const ViewProduct = () => {
 
     }
 
-    
     if(productdata === null){
 
         return(
 
             <section className="min-h-screen bg-linear-to-b from-[#2d3748] via-[#d8d2ad] to-[#f5f5dc] pt-28 flex justify-center items-center">
-
                 <h1 className="text-xl md:text-2xl font-semibold text-[#2d3748]">
                     Loading Product...
                 </h1>
-
             </section>
 
         )
 
     }
-
     return(
 
         <section className="bg-linear-to-b from-[#2d3748] via-[#d8d2ad] to-[#f5f5dc] pt-30 pb-5">
@@ -65,9 +69,7 @@ const ViewProduct = () => {
                         {/* Product Image Section */}
                         <div className="bg-[#f8faf7] rounded-3xl p-5 md:p-8 flex justify-center items-center">
 
-                            <img
-                                src={`http://localhost:9000/uploads/${productdata.image}`}
-                                alt={productdata.product_name}
+                            <img src={`http://localhost:9000/uploads/${productdata.image}`} alt={productdata.product_name}
                                 className="w-full max-w-md h-80 md:h-112 object-contain hover:scale-105 duration-300"
                             />
 
@@ -86,20 +88,28 @@ const ViewProduct = () => {
 
                             {/* Price Section */}
                             <div className="flex items-end gap-2 mb-8">
+                                
 
                                 <h2 className="text-2xl md:text-3xl font-bold text-[#8b4513]">
-
                                     ₹ {Number(productdata.product_price).toLocaleString("en-IN")}
-
                                 </h2>
 
                                 <p className="text-[8px] md:text-xs text-gray-500">
                                     Incl. all taxes
                                 </p>
+                                  
+                                <div className="flex flex-1 w-full ml-40 shadow-lg">
 
-                                <button className="ml-57 bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold rounded-xl shadow-md hover:bg-teal-700 transition-all duration-300 cursor-pointer">
-                                    Add To Cart
-                                </button>
+                                    <button className=" bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold rounded-l-md hover:bg-teal-700 transition-all duration-300 cursor-pointer">
+                                        -
+                                    </button>
+                                    <button className=" bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold transition-all duration-300 cursor-pointer">
+                                        0
+                                    </button>
+                                    <button className=" bg-teal-600 px-6 md:px-8 py-3 text-sm md:text-base text-white font-semibold rounded-r-md hover:bg-teal-700 transition-all duration-300 cursor-pointer">
+                                        +
+                                    </button>
+                                </div>
 
                             </div>
 
@@ -111,7 +121,6 @@ const ViewProduct = () => {
                                     <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide mb-1">
                                         Packaging
                                     </p>
-
                                     <p className="text-xs md:text-sm font-semibold text-[#2d3748]">
                                         {productdata.packaging_detail}
                                     </p>
@@ -124,7 +133,6 @@ const ViewProduct = () => {
                                     <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide mb-1">
                                         HS Code
                                     </p>
-
                                     <p className="text-xs md:text-sm font-semibold text-[#2d3748]">
                                         {productdata.hs_code}
                                     </p>
@@ -150,7 +158,6 @@ const ViewProduct = () => {
                                                 <p className="text-sm md:text-base text-gray-600">
                                                     {list.title}
                                                 </p>
-
                                                 <p className="text-sm md:text-base font-semibold text-[#2d3748]">
                                                     {list.value}
                                                 </p>
@@ -175,8 +182,7 @@ const ViewProduct = () => {
                                     {
                                         productdata.grades.map((list, index)=>(
 
-                                            <div
-                                                key={index}
+                                            <div key={index}
                                                 className="bg-[#f5f5dc] border border-[#d8cfa5] px-4 py-2 rounded-full text-sm md:text-base font-medium text-[#8b4513]"
                                             >
 
@@ -188,13 +194,6 @@ const ViewProduct = () => {
                                     }
 
                                 </div>
-
-                            </div>
-
-                            {/* Add To Cart Button */}
-                            <div>
-
-                                
 
                             </div>
 
