@@ -82,6 +82,7 @@ B2B-Agri-Trading-Platform
 │   ├── .gitignore
 │   ├── package.json
 │   ├── package-lock.json
+|   ├── Database.sql
 │   └── server.js
 │
 ├── frontend
@@ -124,7 +125,6 @@ B2B-Agri-Trading-Platform
 │   ├── vite.config.js
 │   └── eslint.config.js
 │
-├── Database.sql
 └── README.md
 ```
 

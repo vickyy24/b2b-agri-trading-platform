@@ -20,9 +20,7 @@ CREATE TABLE Products_table (
     hs_code VARCHAR(100),
     product_price DECIMAL(10,2),
 
-    CONSTRAINT fk_products_category
-    FOREIGN KEY (category_id)
-    REFERENCES Categories_table(category_id)
+    CONSTRAINT fk_products_category FOREIGN KEY (category_id) REFERENCES Categories_table(category_id)
 );
 
 -- Product Specification Table
@@ -32,9 +30,7 @@ CREATE TABLE Product_Specification_table (
     title VARCHAR(255) NOT NULL,
     value VARCHAR(500) NOT NULL,
 
-    CONSTRAINT fk_specifications_product
-    FOREIGN KEY (product_id)
-    REFERENCES Products_table(product_id)
+    CONSTRAINT fk_specifications_product FOREIGN KEY (product_id) REFERENCES Products_table(product_id)
 );
 
 -- Quality Grades Table
@@ -43,9 +39,7 @@ CREATE TABLE Quality_Grades_table (
     product_id INT,
     grade VARCHAR(255) NOT NULL,
 
-    CONSTRAINT fk_grades_product
-    FOREIGN KEY (product_id)
-    REFERENCES Products_table(product_id)
+    CONSTRAINT fk_grades_product FOREIGN KEY (product_id) REFERENCES Products_table(product_id)
 );
 
 -- View Data
