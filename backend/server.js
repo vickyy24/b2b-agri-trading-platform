@@ -3,8 +3,8 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 
-const {addCategory, getCategories, updateCategory} = require("./Controllers/categoryController");
-const {addProduct, getProducts,getProductById, updateProduct} = require("./Controllers/productController");
+const { addCategory, getCategories, updateCategory } = require("./Controllers/categoryController");
+const { addProduct, getProducts, getProductById, updateProduct } = require("./Controllers/productController");
 
 const app = express();
 
@@ -12,19 +12,28 @@ app.use(cors());
 app.use(express.json());
 
 
+// Ensure uploads directory exists
+const uploadsDir = path.join(__dirname, "uploads");
+const fs = require("fs");
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 // Upload Folder Access
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(uploadsDir));
 
 // Multer Configuration
 const imageStorage = multer.diskStorage({
-    
-    destination: "uploads/",
+
+    destination: (req, file, cb) => {
+        cb(null, uploadsDir);
+    },
     filename: (req, file, cb) => {
         cb(null, path.parse(file.originalname).name + '_' + Date.now() + path.extname(file.originalname));
     }
 
 });
-const upload = multer({storage: imageStorage});
+const upload = multer({ storage: imageStorage });
 
 // Category APIs
 app.post("/addcategory", addCategory);
@@ -43,6 +52,6 @@ app.get("/getproduct/:productid", getProductById);
 
 app.put("/updateproduct/:productid", upload.single("Image"), updateProduct);
 
-app.listen(9000, function(){
+app.listen(9000, function () {
     console.log("Server Started");
 });

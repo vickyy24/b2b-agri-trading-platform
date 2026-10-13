@@ -253,12 +253,13 @@ const ProductAdmin=()=>{
             formData.append("PackagingDetail", productInput.packagingdetail);
             formData.append("HsCode", productInput.hscode);
             formData.append("Image", productInput.image);
+            
             if(!isUpdate){
                 formData.append("SpecificationList", JSON.stringify(specificationlist));
                 formData.append("GradesList", JSON.stringify(gradeslist));
             }
 
-           axios({
+            axios({
                 url: isUpdate ? `http://localhost:9000/updateproduct/${productId}` : "http://localhost:9000/addproduct",
                 method: isUpdate ? "PUT" : "POST",
                 data: formData

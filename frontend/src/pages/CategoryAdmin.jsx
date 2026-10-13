@@ -78,7 +78,7 @@ const CategoryAdmin=()=>{
                 }
                 else{
 
-                  const result = await axios({
+                    const result = await axios({
                         url: "http://localhost:9000/addcategory",
                         method: "POST",
                         data: categoryInput
