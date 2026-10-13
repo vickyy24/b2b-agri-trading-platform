@@ -84,7 +84,7 @@ const ViewProduct = () => {
     }
     return(
 
-        <section className="relative min-h-screen overflow-hidden bg-[#f4f7f2] pt-24 pb-12">
+        <section className="relative min-h-screen overflow-hidden bg-[#f4f7f2] pt-[104px] pb-12">
 
             <div className="pointer-events-none absolute inset-x-0 top-0 h-24 overflow-hidden">
                 <img src={commoditiesBgImage} alt="" className="h-full w-full object-cover object-center brightness-50 saturate-75" />
