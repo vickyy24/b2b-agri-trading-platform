@@ -24,7 +24,7 @@ const Contact=()=>{
 
     return(
         <div>
-            <section className="bg-gray-50 pt-32 pb-10 text-center">
+            <section className="bg-[linear-gradient(to_bottom,#8b4513_0px_80px,#f9fafb_80px_100%)] pt-32 pb-10 text-center">
                 <div className="max-w-3xl mx-auto px-4">
                     <h1 className="text-4xl font-bold text-[#8b4513] mb-4">Contact Us</h1>
                     <p className="text-gray-600 leading-relaxed">Get in touch for inquiries about commodities, services, trade partnerships, vendor registrations, or other business opportunities.</p>
