@@ -39,7 +39,7 @@ const Cart = () => {
 
             <section className="relative min-h-screen overflow-hidden bg-[#f5f7f2] px-4 pb-12 pt-32">
 
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-32 overflow-hidden">
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 overflow-hidden">
                     <img src={commoditiesBgImage} alt="" className="h-full w-full object-cover object-center brightness-50 saturate-75" />
                     <div className="absolute inset-0 bg-[#26372e]/35" />
                 </div>
@@ -69,7 +69,7 @@ const Cart = () => {
 
         <section className="relative min-h-screen overflow-hidden bg-[#f5f7f2] px-4 pb-10 pt-28 text-[#253449] sm:px-6">
 
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-32 overflow-hidden">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-24 overflow-hidden">
                 <img src={commoditiesBgImage} alt="" className="h-full w-full object-cover object-center brightness-50 saturate-75" />
                 <div className="absolute inset-0 bg-[#26372e]/35" />
             </div>
