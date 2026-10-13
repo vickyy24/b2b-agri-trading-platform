@@ -4,13 +4,13 @@ const CommonHero = ({bgImage, title, description}) => {
 
         <section className="relative text-white">
 
-            <div className="h-100 overflow-hidden relative">
+            <div className="h-90 overflow-hidden relative">
 
                 <img src={bgImage} alt="heroImage" className="w-full h-full object-cover scale-110 brightness-55 saturate-60"/>
 
             </div>
 
-            <div className="absolute top-25 w-full text-center">
+            <div className="absolute inset-0 flex flex-col justify-center w-full text-center px-4">
 
                 <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
                     {title}
