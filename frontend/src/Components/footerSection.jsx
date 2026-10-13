@@ -32,13 +32,13 @@ const Footer=()=>{
                                 <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Trade Process</Link>
+                                <Link to="/trade-process" className="text-gray-300 hover:text-white">Trade Process</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Global Reach</Link>
+                                <Link to="/global-reach" className="text-gray-300 hover:text-white">Global Reach</Link>
                             </li>
                             <li>
-                                <Link to="" className="text-gray-300 hover:text-white">Contact</Link>
+                                <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
                             </li>
                             <li>
                                 <Link to="" className="text-gray-300 hover:text-white">Generate Packing List</Link>
