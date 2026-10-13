@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { FaEnvelope, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
-import CommonHero from "../Components/CommonHero";
-import bgImageHome from "../assets/bgImageHome.jpg";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const Contact=()=>{
 
@@ -26,11 +24,12 @@ const Contact=()=>{
 
     return(
         <div>
-            <CommonHero
-                bgImage={bgImageHome}
-                title="Contact Us"
-                description="Get in touch for inquiries about commodities, services, trade partnerships, vendor registrations, or other business opportunities."
-            />
+            <section className="bg-gray-50 pt-14 pb-14 text-center">
+                <div className="max-w-3xl mx-auto px-4">
+                    <h1 className="text-4xl font-bold text-[#8b4513] mb-4">Contact Us</h1>
+                    <p className="text-gray-600 leading-relaxed">Get in touch with me for any inquiries about commodities, services, trade partnerships, vendor registrations, or other business opportunities.</p>
+                </div>
+            </section>
 
             <section className="py-10 bg-gray-50">
                 <div className="mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -38,7 +37,7 @@ const Contact=()=>{
                     <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
                         <div className="text-center mb-6">
                             <h2 className="text-2xl font-bold text-[#8b4513] mb-2">Get in Touch</h2>
-                            <p className="text-gray-600">Fill out the form and your email app will prepare a message to Vikas.</p>
+                            <p className="text-gray-600">Fill out the form below and your email app will prepare a message.</p>
                         </div>
 
                         <form onSubmit={handleContactSubmit} className="space-y-5">
@@ -90,7 +89,7 @@ const Contact=()=>{
 
                     <div className="space-y-8">
                         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                            <h2 className="text-2xl font-bold text-[#2f855a] mb-6">My Contact Details</h2>
+                            <h2 className="text-2xl font-bold text-[#2f855a] mb-6">Our Offices</h2>
                             <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                                 <h3 className="text-xl font-bold text-[#8b4513] mb-2">Vikas Sontakke</h3>
                                 <p className="text-gray-600 mb-5">Pune, Maharashtra</p>
@@ -103,28 +102,6 @@ const Contact=()=>{
                                         <FaEnvelope className="text-green-700" />
                                         <span>vikassontakke2002@gmail.com</span>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/vikassontakke/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-green-800">
-                                        <FaLinkedin className="text-green-700" />
-                                        <span>LinkedIn</span>
-                                    </a>
-                                    <a href="https://github.com/vickyy24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-green-800">
-                                        <FaGithub className="text-green-700" />
-                                        <span>GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                            <h2 className="text-2xl font-bold text-[#2f855a] mb-6">Frequently Asked Questions</h2>
-                            <div className="space-y-5">
-                                <div>
-                                    <h3 className="font-bold text-[#8b4513] mb-2">How can I contact you directly?</h3>
-                                    <p className="text-gray-600">Use the phone number or email above, or send an inquiry through the form.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-[#8b4513] mb-2">What information should I include?</h3>
-                                    <p className="text-gray-600">Please include the commodity, quantity, quality specifications, delivery timeline, and any special requirements.</p>
                                 </div>
                             </div>
                         </div>
