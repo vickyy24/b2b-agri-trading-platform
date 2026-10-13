@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import QuoteModal from "../Components/QuoteModal"; 
 
 import { FiUserPlus } from "react-icons/fi";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowForwardIos, MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import bg1 from "../assets/bgImageHome.jpg";
 import bg2 from "../assets/bgImageHome2.jpg";
@@ -18,6 +18,13 @@ import FeatureCard from "../Components/FeatureCard";
 
 const Home=()=>{
     const [isOpen, setIsOpen] = useState(false);
+    const commoditiesRef = useRef(null);
+    const brandsRef = useRef(null);
+
+    function scrollRow(rowRef, direction) {
+        rowRef.current?.scrollBy({ left: direction * 180, behavior: "smooth" });
+    }
+
     function openModal() {
         setIsOpen(true);
     }
@@ -49,7 +56,7 @@ const Home=()=>{
             
             {/* Hero Section 1 */}
             <section className="relative text-white">
-                <div className="h-144 max-lg:h-[720px] md:max-lg:h-[680px] overflow-hidden relative">
+                <div className="h-144 max-lg:h-[720px] max-sm:h-[640px] md:max-lg:h-[680px] overflow-hidden relative">
                     <div className="absolute inset-0 bg-cover bg-center scale-110 brightness-70 saturate-75" style={{ backgroundImage: `url(${bg1})` ,}}>
                     </div>
                 </div> 
@@ -218,41 +225,49 @@ const Home=()=>{
             {/* Section 5 */}
             <section className="h-83 max-lg:h-auto py-16 max-lg:py-10 bg-white">
                 <div className="px-4">
-                    <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-12"> Featured Commodities</h5>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-12 max-sm:mb-4"> Featured Commodities</h5>
+                    <div className="mb-2 hidden max-sm:flex justify-end gap-2">
+                        <button onClick={() => scrollRow(commoditiesRef, -1)} aria-label="Scroll featured commodities left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
+                            <MdChevronLeft />
+                        </button>
+                        <button onClick={() => scrollRow(commoditiesRef, 1)} aria-label="Scroll featured commodities right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
+                            <MdChevronRight />
+                        </button>
+                    </div>
+                    <div ref={commoditiesRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-sm:flex max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:pb-2">
 
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={wheat} alt="wheatImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className="flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Wheat</h6>
                             </div>
                             
                         </div>
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={Rice} alt="RiceImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className="flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Rice</h6>
                             </div>
                         </div>
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={Vegetables} alt="VegetablesImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className="flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Vegetables</h6>
                             </div>
                         </div>
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={Soyabeans} alt="SoyabeansImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className="flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Soyabeans</h6>
                             </div>
                         </div>
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={Barley} alt="BarleyImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className="flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Barley</h6>
                             </div>
                         </div>
-                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={Corn} alt="CornImg" className=" absolute w-full h-full object-cover duration-500 hover:scale-110"/>
                             <div className=" flex justify-center h-full items-center  ">
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Barley</h6>
@@ -270,36 +285,44 @@ const Home=()=>{
                         <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-4"> Brands that Trust Us</h5>
                         <p className="text-gray-600 mb-8">Trusted by leading agricultural companies worldwide</p>
                     </div>
-                    <div className="flex justify-center gap-7 max-lg:flex-wrap max-lg:gap-3">
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                    <div className="mb-2 hidden max-sm:flex justify-end gap-2">
+                        <button onClick={() => scrollRow(brandsRef, -1)} aria-label="Scroll brands left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
+                            <MdChevronLeft />
+                        </button>
+                        <button onClick={() => scrollRow(brandsRef, 1)} aria-label="Scroll brands right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
+                            <MdChevronRight />
+                        </button>
+                    </div>
+                    <div ref={brandsRef} className="flex justify-center gap-7 max-lg:flex-wrap max-lg:gap-3 max-sm:flex-nowrap max-sm:justify-start max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:pb-2">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">Global Grain Corp</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">AgriTrade International</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">FarmFresh Exports</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">GreenField Trading</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">Harvest Partners</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">CropMasters Inc</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">SeedToShelf Co</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
+                        <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">OrganicTrade Ltd</p>
                         </div>
