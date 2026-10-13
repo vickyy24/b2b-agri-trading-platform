@@ -91,6 +91,7 @@ const Commodities=()=>{
             <CommonHero
                 bgImage = {commoditiesBgImage}
                 title = "Agricultural Commodities"
+                heroHeight = "h-80"
                 description = {`We source and supply premium quality agricultural products from verified, trusted producers. 
                 Our portfolio includes essential grains, pulses, and specialty crops meeting international standards. 
                 Each commodity undergoes rigorous quality checks to ensure nutritional value, purity, and market suitability.`}

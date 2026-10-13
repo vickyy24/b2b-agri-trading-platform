@@ -1,10 +1,10 @@
-const CommonHero = ({bgImage, title, description}) => {
+const CommonHero = ({bgImage, title, description, heroHeight = "h-90"}) => {
 
     return(
 
         <section className="relative text-white">
 
-            <div className="h-90 overflow-hidden relative">
+            <div className={`${heroHeight} overflow-hidden relative`}>
 
                 <img src={bgImage} alt="heroImage" className="w-full h-full object-cover scale-110 brightness-55 saturate-60"/>
 
