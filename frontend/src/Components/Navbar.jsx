@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import logo from "../assets/PadmayogLogo.png"
 import { useSelector } from "react-redux";
 import { PiShoppingCart } from "react-icons/pi";
 
 const Navbar=()=>{
+
+    const location = useLocation();
+    const isContactPage = location.pathname === "/contact";
 
     const cartitems = useSelector((state)=>
         state.cart.cartItems
@@ -16,15 +19,15 @@ const Navbar=()=>{
 
 
     return(
-        <nav className="w-full absolute  z-50 border-b border-white/30">
+        <nav className={"w-full absolute z-50 border-b " + (isContactPage ? "bg-white border-gray-200" : "border-white/30")}>
             <div className="flex justify-between items-center px-4 py-2 ">
-                <NavLink to="/" className="bg-white p-4 rounded-2xl">
+                <NavLink to="/" className={isContactPage ? "" : "bg-white p-4 rounded-2xl"}>
                     
                     <img src={logo} alt="Padmayog" className="h-12 object-contain"/>
                     
                 </NavLink>
 
-                <ul className="flex gap-6 items-center text-white font-medium">
+                <ul className={"flex gap-6 items-center font-medium " + (isContactPage ? "text-[#8b4513]" : "text-white")}>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/commodities">Commodities</NavLink></li>

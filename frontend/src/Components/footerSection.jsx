@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/PadmayogLogo.png";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer=()=>{
     return(
@@ -70,16 +67,14 @@ const Footer=()=>{
                     <div>
                         <h4 className="text-lg font-bold mb-4">Contact Us</h4>
                         <div className="space-y-2 text-gray-300 mb-6">
-                            <p>📍 109, Suratwala Mark Plazoo, Hinjewadi, Pune, MS-411057</p>
-                            <p>📞 +91 788 766 2700</p>
-                            <p>✉️ info@padmayog.in</p>
+                            <p>📍 Pune, Maharashtra</p>
+                            <p>📞 +91 93252 87261</p>
+                            <p>✉️ vikassontakke2002@gmail.com</p>
                         </div>
                         <h4 className="text-lg font-bold mb-4">Follow Us</h4>
                         <div className="flex space-x-4">
-                            <a href="https://www.facebook.com"  target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaFacebookSquare className="w-6 h-6"/></a>
-                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaSquareXTwitter className="w-6 h-6"/></a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaInstagram className="w-6 h-6"/></a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaLinkedin className="w-6 h-6"/></a>
+                            <a href="https://www.linkedin.com/in/vikassontakke/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaLinkedin className="w-6 h-6"/></a>
+                            <a href="https://github.com/vickyy24" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 flex items-center justify-center"><FaGithub className="w-6 h-6"/></a>
                         </div>
                     </div>
                 </div>
