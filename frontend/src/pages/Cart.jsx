@@ -136,9 +136,9 @@ const Cart = () => {
                     </div>
 
                     {/* RIGHT SIDE: STAYS VISIBLE WHILE THE PRODUCT LIST SCROLLS */}
-                    <aside className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:min-h-[620px]">
+                    <aside className="lg:sticky lg:top-4 lg:self-start">
 
-                        <div className="flex max-h-[calc(100vh-2rem)] flex-col overflow-hidden rounded-2xl border border-[#e3e9e1] bg-white shadow-[0_12px_36px_rgba(39,58,44,0.10)] lg:h-full lg:min-h-[620px]">
+                        <div className="flex flex-col overflow-hidden rounded-2xl border border-[#e3e9e1] bg-white shadow-[0_12px_36px_rgba(39,58,44,0.10)] lg:max-h-[calc(100vh-2rem)]">
 
                             <div className="border-b border-[#edf0ea] px-5 py-4 sm:px-6">
                                 <div className="flex items-center gap-3">
