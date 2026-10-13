@@ -14,6 +14,11 @@ const Navbar=()=>{
         itemCount += item.quantity;
     })
 
+    const navLinkClass = ({isActive})=>
+        isActive
+        ? "text-[#d4af37] underline decoration-2 underline-offset-8 transition-all duration-200"
+        : "transition-colors duration-200 hover:text-[#d4af37]";
+
 
     return(
         <nav className="w-full absolute  z-50 border-b border-white/30">
@@ -25,13 +30,13 @@ const Navbar=()=>{
                 </NavLink>
 
                 <ul className="flex gap-6 items-center text-white font-medium">
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/commodities">Commodities</NavLink></li>
-                    <li><NavLink to="/services">Services</NavLink></li>
-                    <li><NavLink to="/trade-process">Trade Process</NavLink></li>
-                    <li><NavLink to="/global-reach">Global Reach</NavLink></li>
-                    <li><NavLink to="/contact">Contact</NavLink></li>
+                    <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
+                    <li><NavLink to="/about" className={navLinkClass}>About</NavLink></li>
+                    <li><NavLink to="/commodities" className={navLinkClass}>Commodities</NavLink></li>
+                    <li><NavLink to="/services" className={navLinkClass}>Services</NavLink></li>
+                    <li><NavLink to="/trade-process" className={navLinkClass}>Trade Process</NavLink></li>
+                    <li><NavLink to="/global-reach" className={navLinkClass}>Global Reach</NavLink></li>
+                    <li><NavLink to="/contact" className={navLinkClass}>Contact</NavLink></li>
                     <li>
                         <NavLink to="/cart" className="relative flex items-center gap-2 bg-[#8b4513] hover:bg-[#622e09] px-4 py-2 rounded-lg">
 
