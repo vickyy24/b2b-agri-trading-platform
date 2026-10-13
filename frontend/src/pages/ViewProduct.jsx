@@ -96,18 +96,18 @@ const ViewProduct = () => {
 
             <div className="relative mx-auto max-w-7xl px-4 md:px-6">
 
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                    <Link to="/commodities" className="inline-flex items-center gap-2 rounded-full border border-[#dce5d9] bg-white/80 px-4 py-2 text-sm font-semibold text-[#496052] shadow-sm transition-all hover:-translate-x-0.5 hover:border-[#2f855a] hover:text-[#2f855a]">
-                        <span aria-hidden="true">←</span>
-                        Back to commodities
-                    </Link>
-
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#708075]">
-                        Product details
-                    </p>
-                </div>
-
                 <div className="overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_70px_-35px_rgba(45,55,72,0.42)]">
+
+                    <div className="flex flex-wrap items-center justify-between gap-3 px-5 pt-4 pb-3 md:px-7 lg:px-8">
+                        <Link to="/commodities" className="inline-flex items-center gap-2 rounded-full border border-[#dce5d9] bg-white/80 px-4 py-2 text-sm font-semibold text-[#496052] shadow-sm transition-all hover:-translate-x-0.5 hover:border-[#2f855a] hover:text-[#2f855a]">
+                            <span aria-hidden="true">←</span>
+                            Back to commodities
+                        </Link>
+
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#708075]">
+                            Product details
+                        </p>
+                    </div>
 
                     <div className="grid grid-cols-1 gap-0 lg:grid-cols-[0.95fr_1.05fr]">
 
@@ -118,14 +118,14 @@ const ViewProduct = () => {
                             <div className="pointer-events-none absolute left-1/2 top-[44%] h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2f855a]/15 bg-white/20 shadow-[0_0_0_18px_rgba(47,133,90,0.025),inset_0_0_40px_rgba(47,133,90,0.06)] md:h-72 md:w-72" />
                             <div className="pointer-events-none absolute bottom-[13%] left-1/2 h-8 w-52 -translate-x-1/2 rounded-[50%] bg-[#2d3748]/15 blur-xl md:w-64" />
 
-                            <div className="absolute left-5 top-5 rounded-full border border-white/80 bg-white/85 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#2f855a] shadow-sm backdrop-blur">
+                            <div className="absolute left-5 top-5 z-20 rounded-full border border-white/80 bg-white/85 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#2f855a] shadow-sm backdrop-blur">
                                 Premium quality
                             </div>
 
                             <img
                                 src={`http://localhost:9000/uploads/${productdata.image}`}
                                 alt={productdata.product_name}
-                                className="relative z-10 h-[280px] w-full max-w-md -translate-y-10 object-contain drop-shadow-[0_22px_26px_rgba(45,55,72,0.22)] transition-transform duration-500 hover:scale-[1.025] md:h-[370px] md:-translate-y-14"
+                                className="relative z-10 h-[280px] w-full max-w-md object-contain drop-shadow-[0_22px_26px_rgba(45,55,72,0.22)] transition-transform duration-500 hover:scale-[1.025] md:h-[370px] md:-translate-y-14"
                             />
 
                         </div>
