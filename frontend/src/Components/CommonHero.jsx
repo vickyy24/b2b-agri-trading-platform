@@ -10,7 +10,7 @@ const CommonHero = ({bgImage, title, description}) => {
 
             </div>
 
-            <div className="absolute inset-0 flex flex-col justify-center w-full text-center px-4">
+            <div className="absolute inset-0 flex flex-col justify-center w-full text-center px-4 translate-y-4">
 
                 <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
                     {title}
