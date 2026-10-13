@@ -1,12 +1,9 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import logo from "../assets/PadmayogLogo.png"
 import { useSelector } from "react-redux";
 import { PiShoppingCart } from "react-icons/pi";
 
 const Navbar=()=>{
-
-    const location = useLocation();
-    const isContactPage = location.pathname === "/contact";
 
     const cartitems = useSelector((state)=>
         state.cart.cartItems
@@ -19,15 +16,15 @@ const Navbar=()=>{
 
 
     return(
-        <nav className={isContactPage ? "w-full relative z-50 bg-white shadow-md" : "w-full absolute z-50 border-b border-white/30"}>
-            <div className={`flex justify-between items-center ${isContactPage ? "px-8 py-12" : "px-4 py-2"}`}>
-                <NavLink to="/" className={isContactPage ? "p-4" : "bg-white p-4 rounded-2xl"}>
+        <nav className="w-full absolute  z-50 border-b border-white/30">
+            <div className="flex justify-between items-center px-4 py-2 ">
+                <NavLink to="/" className="bg-white p-4 rounded-2xl">
                     
                     <img src={logo} alt="Padmayog" className="h-12 object-contain"/>
                     
                 </NavLink>
 
-                <ul className={`flex gap-6 items-center ${isContactPage ? "text-[#8b4513] [&_.active]:text-orange-500" : "text-white"} font-medium`}>
+                <ul className="flex gap-6 items-center text-white font-medium">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/commodities">Commodities</NavLink></li>
@@ -35,7 +32,7 @@ const Navbar=()=>{
                     <li><NavLink to="/trade-process">Trade Process</NavLink></li>
                     <li><NavLink to="/global-reach">Global Reach</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li>
-                    {!isContactPage && <li>
+                    <li>
                         <NavLink to="/cart" className="relative flex items-center gap-2 bg-[#8b4513] hover:bg-[#622e09] px-4 py-2 rounded-lg">
 
                             <p className="absolute top-0 left-7 bg-red-600 min-w-5 h-5 text-xs rounded-full flex justify-center items-center">
@@ -49,7 +46,7 @@ const Navbar=()=>{
                             </p>
 
                         </NavLink>
-                    </li>}
+                    </li>
                 </ul>
             </div>
         </nav>
