@@ -13,14 +13,14 @@ const About=()=>{
             />
 
             {/* Section 2 */}
-            <section className="py-16">
+            <section className="py-16 max-lg:py-10">
 
                 <div className="mx-auto px-4">
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-lg:gap-5 items-center">
 
-                        <div className="p-8 bg-sky-50/40 rounded-lg shadow-lg border border-gray-200">
-                            <h2 className="text-3xl text-center font-bold text-[#8b4513] mb-6">Our Journey</h2>
+                        <div className="p-8 max-lg:p-5 bg-sky-50/40 rounded-lg shadow-lg border border-gray-200">
+                            <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-6">Our Journey</h2>
                             <div className="space-y-4 text-gray-600">
                                 <p>Padmayog Agrotech Private Limited is an India-based agri-commodities and global trade company, purpose-built to deliver reliable agricultural supply solutions to international markets.</p>
                                 <p>We operate at the intersection of <strong>sourcing strength, processing capability,</strong> and <strong>export excellence</strong>—transforming agricultural potential into globally traded value.</p>
@@ -28,8 +28,8 @@ const About=()=>{
                             </div>
                         </div>
 
-                        <div className="p-8 rounded-lg bg-[#f5f5dc]">
-                            <h3 className="text-2xl font-bold text-[#2f855a] mb-6">What Sets Us Apart</h3>
+                        <div className="p-8 max-lg:p-5 rounded-lg bg-[#f5f5dc]">
+                            <h3 className="text-2xl max-lg:text-xl font-bold text-[#2f855a] mb-6">What Sets Us Apart</h3>
                             <ul className="space-y-4 text-gray-700">
                                 <li>
                                     🌱<strong>Strong Origin Network:</strong> Direct engagement with farmers, aggregators, and processors across key agricultural belts.
@@ -50,11 +50,11 @@ const About=()=>{
             </section>
 
             {/* Section 3 */}
-            <section className="py-14 bg-[#f5f5dc]">
+            <section className="py-14 max-lg:py-10 bg-[#f5f5dc]">
 
                 <div className="mx-auto px-4">
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-lg:gap-5 items-center">
 
                         <div className="bg-white p-8 rounded-lg shadow-md">
                             <p className="text-4xl mb-4">🎯</p>
@@ -73,11 +73,11 @@ const About=()=>{
             </section>
 
             {/* Section 4 */}
-            <section className="py-16">
+            <section className="py-16 max-lg:py-10">
                 <div className="mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12"></h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 max-lg:gap-4 max-sm:gap-3">
 
                         <FeatureCard
                             icon="🤝"
@@ -140,14 +140,14 @@ const About=()=>{
             </section>
 
             {/* Section 5 */}
-            <section className="py-16 bg-[#f5f5dc]">
+            <section className="py-16 max-lg:py-10 bg-[#f5f5dc]">
 
                 <div className="mx-auto px-4">
                     
                     <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12">Leadership Team</h2>
                     <div className="flex justify-center">
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 max-lg:gap-4 max-sm:gap-3">
 
                             <div className="bg-white p-6 rounded-lg shadow-md text-center">
                                 <p className="w-24 h-24 bg-[#2f855a] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">DSMR</p>
@@ -174,12 +174,12 @@ const About=()=>{
             </section>
 
             {/* Section 6 */}
-            <section className="py-16">
+            <section className="py-16 max-lg:py-10">
 
                 <div className="mx-auto px-4">
 
                     <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12">Certifications & Compliance</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 max-lg:gap-4 max-sm:gap-3">
 
                         <div className="border border-gray-200 rounded-lg p-6 hover:border-[#2f855a] transition-colors duration-300">
 

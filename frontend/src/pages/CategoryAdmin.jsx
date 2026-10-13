@@ -174,9 +174,9 @@ const CategoryAdmin=()=>{
                 type={backendMessage.type}
                 className="fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50"
             />
-            <div className="flex gap-6 items-start">
+            <div className="flex gap-6 items-start max-lg:flex-col max-lg:gap-4">
 
-                <div className="w-[40%] bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                <div className="w-[40%] max-lg:w-full bg-white rounded-2xl shadow-md border border-gray-100 p-6 max-sm:p-4">
 
                     <h2 className="text-2xl font-semibold text-[#8b4513] mb-6">Category Details</h2>
                     <form onSubmit={addCategory} className="space-y-5">
@@ -224,12 +224,12 @@ const CategoryAdmin=()=>{
                 </div>
 
                 {/* --------- Category List table --------- */}
-                <div className="w-[60%] bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                <div className="w-[60%] max-lg:w-full min-w-0 bg-white rounded-2xl shadow-md border border-gray-100 p-6 max-sm:p-4">
 
                     <h2 className="text-2xl font-semibold text-[#8b4513] mb-6">Category List</h2>
                     <div className="overflow-x-auto">
 
-                        <table className="w-full border">
+                        <table className="w-full min-w-[520px] border">
                             <thead className="bg-[#f3f5f2]">
                                 <tr>
                                     <th className="text-left px-5 py-4 border border-gray-300">Sr No</th>

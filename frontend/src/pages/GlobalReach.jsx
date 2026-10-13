@@ -17,9 +17,9 @@ const GlobalReach=()=>{
                 description="Connecting agricultural markets across 10+ countries with reliable trade networks. Expanding beyond borders, we connect Indian agricultural excellence with international demand. Operating across multiple continents, we've established reliable trade networks in key markets worldwide."
             />
 
-            <section className="py-16 bg-white">
+            <section className="py-16 max-lg:py-10 bg-white">
                 <div className="mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-5">Our Global Network</h2>
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-center text-[#8b4513] mb-5">Our Global Network</h2>
                     <p className="max-w-4xl mx-auto text-center text-gray-600 leading-relaxed mb-12">Padmayog Agrotech connects Indian agricultural excellence with international markets through reliable export and import networks.</p>
 
                     <div className="max-w-5xl mx-auto bg-sky-50/40 rounded-2xl border border-gray-200 p-6 md:p-10">
@@ -33,7 +33,7 @@ const GlobalReach=()=>{
 
                             <div className="text-green-700 text-3xl hidden md:block">→</div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 w-full">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-lg:gap-3 flex-1 w-full">
                                 <div className="bg-white rounded-xl shadow-md border border-gray-200 p-5 text-center">
                                     <p className="text-3xl mb-2">🇬🇧</p>
                                     <h3 className="font-bold text-[#8b4513]">United Kingdom</h3>
@@ -55,9 +55,9 @@ const GlobalReach=()=>{
                 </div>
             </section>
 
-            <section className="py-14 bg-[#f5f5dc]">
+            <section className="py-14 max-lg:py-10 bg-[#f5f5dc]">
                 <div className="mx-auto px-4 text-center max-w-3xl">
-                    <h2 className="text-3xl font-bold text-[#8b4513] mb-4">Countries We Serve</h2>
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-[#8b4513] mb-4">Countries We Serve</h2>
                     <p className="text-gray-700 leading-relaxed">We are actively expanding our international footprint. New markets and trade corridors will be announced as global partnerships grow.</p>
                     <div className="bg-white rounded-xl shadow-md p-7 mt-8 inline-block">
                         <p className="text-5xl mb-3">🌍</p>
@@ -67,11 +67,11 @@ const GlobalReach=()=>{
                 </div>
             </section>
 
-            <section className="py-16 bg-white">
+            <section className="py-16 max-lg:py-10 bg-white">
                 <div className="mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-10">Major Trade Routes</h2>
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-center text-[#8b4513] mb-10">Major Trade Routes</h2>
                     <div className="overflow-x-auto max-w-5xl mx-auto rounded-xl border border-gray-200 shadow-md">
-                        <table className="w-full text-left">
+                        <table className="w-full min-w-[620px] text-left">
                             <thead className="bg-[#f3f5f2]">
                                 <tr>
                                     <th className="px-5 py-4">Origin</th>

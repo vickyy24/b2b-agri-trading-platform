@@ -4,11 +4,11 @@ const ProductCard = ({ list, cartProduct, handleAddToCart, handleIncrement, hand
 
     return(
 
-        <div className="p-4 md:p-6 h-full border border-gray-200 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+        <div className="p-4 md:p-6 max-lg:p-2.5 sm:max-lg:p-3.5 h-full border border-gray-200 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
 
             {/* Product Image */}
-            <div className="flex justify-center gap-18 mb-2 h-75 border-b border-gray-300">
-                <img src={`http://localhost:9000/uploads/${list.image}`} alt="productImage" className="w-60 h-75"/>
+            <div className="flex justify-center gap-18 mb-2 h-75 max-lg:h-52 md:max-lg:h-60 border-b border-gray-300">
+                <img src={`http://localhost:9000/uploads/${list.image}`} alt="productImage" className="w-60 h-75 max-lg:h-full max-lg:w-full max-lg:object-contain"/>
             </div>
 
             {/* Product Name */}
@@ -17,7 +17,7 @@ const ProductCard = ({ list, cartProduct, handleAddToCart, handleIncrement, hand
             </h3>
 
             {/* Product Price & Packaging */}
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center max-lg:gap-2">
 
                 <p className="flex flex-col mb-4">
 
@@ -46,9 +46,9 @@ const ProductCard = ({ list, cartProduct, handleAddToCart, handleIncrement, hand
             </div>
 
             {/* Product Buttons */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-lg:flex-col max-lg:gap-2">
 
-                <Link to={`/view-product/${list.product_id}`} className="bg-[#f5f5dc] border border-[#8b4513] px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm text-[#8b4513] font-semibold rounded-md shadow-sm hover:bg-[#8b4513] hover:text-white hover:border-[#8b4513] hover:shadow-lg transition-all duration-300 cursor-pointer">
+                <Link to={`/view-product/${list.product_id}`} className="bg-[#f5f5dc] border border-[#8b4513] px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm text-[#8b4513] font-semibold rounded-md shadow-sm hover:bg-[#8b4513] hover:text-white hover:border-[#8b4513] hover:shadow-lg transition-all duration-300 cursor-pointer max-lg:flex max-lg:items-center max-lg:justify-center max-lg:min-h-9">
                     View Product
                 </Link>
 

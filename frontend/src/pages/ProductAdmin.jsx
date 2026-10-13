@@ -386,9 +386,9 @@ const ProductAdmin=()=>{
                 className="fixed top-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50"
             />
         
-            <div className="flex gap-3 items-start">
+            <div className="flex gap-3 items-start max-lg:flex-col">
 
-                <form onSubmit={addProduct} className="w-[31%] bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                <form onSubmit={addProduct} className="w-[31%] max-lg:w-full bg-white rounded-2xl shadow-md border border-gray-100 p-6 max-sm:p-4">
 
                     <h2 className="text-2xl font-semibold text-[#8b4513] mb-6">Product Details</h2>
 
@@ -565,7 +565,7 @@ const ProductAdmin=()=>{
                 </form >
 
                 {/* --------- Product List Table ---------*/}
-                <div className="w-[69%] bg-white rounded-2xl shadow-md p-6">
+                <div className="w-[69%] max-lg:w-full min-w-0 bg-white rounded-2xl shadow-md p-6 max-sm:p-4">
                    
 
                     {
@@ -584,7 +584,7 @@ const ProductAdmin=()=>{
                     <h2 className="text-2xl font-semibold text-[#8b4513] mb-1"> Product Data</h2>
                     <div className="overflow-x-auto">
 
-                        <table className="w-full">
+                        <table className="w-full max-lg:min-w-[1100px]">
                             <thead className="bg-[#f3f5f2]">
                                 <tr>
                                     <th className="text-left px-3 py-3 border border-gray-300">Sr No</th>

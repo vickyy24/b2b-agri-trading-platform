@@ -5,14 +5,14 @@ const Admin = () => {
     const location = useLocation();
 
     return (
-        <div className="min-h-screen bg-[#f8faf7] px-3 py-6">
+        <div className="min-h-screen bg-[#f8faf7] px-3 py-6 max-sm:px-2 max-sm:py-4">
 
             <div className="mb-5">
                 <h1 className="text-3xl font-bold text-[#8b4513] mb-1">Admin Panel</h1>
                 <p className="text-gray-600">Manage commodity categories and products.</p>
             </div>
 
-            <div className="flex gap-4 mb-5">
+            <div className="flex flex-wrap gap-3 mb-5">
 
                 <Link to="category" className={
                     location.pathname.includes("/admin/category") ? "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-[#2f855a] text-white " : "px-5 py-2.5 rounded-lg font-semibold cursor-pointer bg-white border border-gray-300 text-gray-700"}>

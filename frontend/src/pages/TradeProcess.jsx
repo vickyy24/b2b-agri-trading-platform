@@ -69,16 +69,16 @@ const TradeProcess=()=>{
                 description="A transparent methodology for global agricultural commodities trading, step-by-step approach to global agricultural commodities trading"
             />
 
-            <section className="py-10 bg-gray-50">
+            <section className="py-10 max-sm:py-6 bg-gray-50">
                 <div className="mx-auto px-4">
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-sm:gap-2 mb-8">
                         {tradeSteps.map((step, index)=>(
                             <button
                                 key={index}
                                 type="button"
                                 onClick={()=>setActiveStep(index)}
-                                className={"flex items-center gap-3 p-4 rounded-lg border text-left duration-300 " +
+                                className={"flex items-center gap-3 p-4 max-sm:gap-2 max-sm:p-2 rounded-lg border text-left duration-300 " +
                                     (activeStep === index ? "bg-green-700 text-white border-green-700 shadow-md" : "bg-white text-gray-700 border-gray-200 hover:border-green-700")}
                             >
                                 <span className="text-2xl">{step.icon}</span>
@@ -90,11 +90,11 @@ const TradeProcess=()=>{
                         ))}
                     </div>
 
-                    <div className="bg-white rounded-xl border border-gray-200 shadow-md p-6 md:p-8 mb-16">
+                    <div className="bg-white rounded-xl border border-gray-200 shadow-md p-6 md:p-8 max-sm:p-4 mb-16 max-sm:mb-10">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                             <div className="lg:col-span-2">
                                 <p className="text-4xl mb-3">{activeTradeStep.icon}</p>
-                                <h2 className="text-2xl font-bold text-[#8b4513] mb-3">Step {activeStep + 1}: {activeTradeStep.title}</h2>
+                                <h2 className="text-2xl max-sm:text-xl font-bold text-[#8b4513] mb-3">Step {activeStep + 1}: {activeTradeStep.title}</h2>
                                 <p className="text-gray-600 leading-relaxed mb-6">{activeTradeStep.description}</p>
                                 {activeStep === 0 &&
                                     <>
@@ -121,11 +121,11 @@ const TradeProcess=()=>{
                             </div>
                         </div>
 
-                        <div className="flex justify-between mt-8">
-                            <button type="button" disabled={activeStep === 0} onClick={()=>setActiveStep(activeStep - 1)} className="px-5 py-3 rounded-lg border border-gray-300 text-gray-700 disabled:opacity-50 cursor-pointer">
+                        <div className="flex justify-between gap-3 mt-8">
+                            <button type="button" disabled={activeStep === 0} onClick={()=>setActiveStep(activeStep - 1)} className="px-5 py-3 max-sm:px-3 rounded-lg border border-gray-300 text-gray-700 disabled:opacity-50 cursor-pointer">
                                 ← Previous Step
                             </button>
-                            <button type="button" disabled={activeStep === tradeSteps.length - 1} onClick={()=>setActiveStep(activeStep + 1)} className="px-5 py-3 rounded-lg bg-green-700 hover:bg-green-800 text-white disabled:opacity-50 cursor-pointer">
+                            <button type="button" disabled={activeStep === tradeSteps.length - 1} onClick={()=>setActiveStep(activeStep + 1)} className="px-5 py-3 max-sm:px-3 rounded-lg bg-green-700 hover:bg-green-800 text-white disabled:opacity-50 cursor-pointer">
                                 Next Step →
                             </button>
                         </div>

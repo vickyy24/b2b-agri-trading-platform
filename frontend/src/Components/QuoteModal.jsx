@@ -2,12 +2,12 @@ const QuoteModal = (props) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
 
-            <div className="w-full max-w-4xl mx-4 bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="flex max-h-[95vh] w-full max-w-4xl flex-col mx-4 bg-white rounded-2xl shadow-xl overflow-hidden">
 
                 {/* Header */}
-                <div className="flex justify-between items-start px-6 py-4 bg-[#e9efe9]">
+                <div className="flex shrink-0 justify-between items-start gap-3 px-6 py-4 max-sm:px-4 max-sm:py-3 bg-[#e9efe9]">
                     <div>
-                        <h2 className="text-2xl font-semibold text-[#8b4513]">Get Instant Commodity Quote</h2>
+                        <h2 className="text-2xl max-sm:text-xl font-semibold text-[#8b4513]">Get Instant Commodity Quote</h2>
                         <p className="text-base text-gray-600 mt-1">
                             Fill out the form below to get competitive pricing for your requirements
                         </p>
@@ -17,9 +17,9 @@ const QuoteModal = (props) => {
                 </div>
 
                 {/* Body */}
-                <div className="bg-gray-50 p-6 max-h-[65vh] overflow-y-auto">
+                <div className="min-h-0 bg-gray-50 p-6 max-sm:p-4 max-h-[65vh] max-sm:max-h-[60vh] overflow-y-auto">
 
-                    <div className="bg-white p-6 rounded-xl shadow-sm">
+                    <div className="bg-white p-6 max-sm:p-4 rounded-xl shadow-sm">
 
                         {/* Commodity Details */}
                         <h3 className="text-lg font-semibold text-[#8b4513] mb-3">Commodity Details</h3>
@@ -38,7 +38,7 @@ const QuoteModal = (props) => {
                             <option>Mustard</option>
                         </select>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-[15px] font-medium text-gray-800 mb-1">
                                     Quantity (Tons) *
@@ -64,7 +64,7 @@ const QuoteModal = (props) => {
                             Company Details
                         </h3>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-[15px] font-medium text-gray-800 mb-1">
                                     Company Name *
@@ -86,7 +86,7 @@ const QuoteModal = (props) => {
                         {/* Contact Details */}
                         <h3 className="text-lg font-semibold text-[#8b4513] mb-3">Contact Details</h3>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-[15px] font-medium text-gray-800 mb-1">Email Address *</label>
                                 <input type="email" placeholder="contact@company.com" className="border p-3 rounded-md w-full border-gray-400"/>
@@ -124,7 +124,7 @@ const QuoteModal = (props) => {
                 </div>
 
                 {/* Footer */}
-                <div className="flex justify-between items-center px-6 py-3 border-t border-gray-400 bg-white">
+                <div className="flex shrink-0 flex-wrap justify-between items-center gap-3 px-6 py-3 max-sm:px-4 border-t border-gray-400 bg-white">
 
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                         <span className="text-green-600">✔</span>24-hour response

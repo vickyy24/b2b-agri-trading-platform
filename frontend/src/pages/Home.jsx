@@ -31,7 +31,7 @@ const Home=()=>{
             {/* Floating WhatsApp button */}
             {/* <a href="#">WhatsApp Button</a> */}
             {/* Vendor registration floating button */}
-            <a href="#" className="fixed right-4 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center">
+            <a href="#" className="fixed right-4 top-1/2 z-40 -translate-y-1/2 hidden xl:flex flex-col items-center">
 
                 <div className="flex items-center gap-2 bg-white px-3 py-2.5 rounded-lg  border border-green-200 shadow-[0_4px_18px_rgba(0,0,0,0.25),0_0_14px_rgba(34,197,94,0.22)]">
 
@@ -49,50 +49,50 @@ const Home=()=>{
             
             {/* Hero Section 1 */}
             <section className="relative text-white">
-                <div className="h-144 overflow-hidden relative">
+                <div className="h-144 max-lg:h-[720px] md:max-lg:h-[680px] overflow-hidden relative">
                     <div className="absolute inset-0 bg-cover bg-center scale-110 brightness-70 saturate-75" style={{ backgroundImage: `url(${bg1})` ,}}>
                     </div>
                 </div> 
-                <div className="absolute top-26 w-full text-center">
-                    <h1 className=" text-3xl md:text-4xl font-bold leading-tight mb-6">
+                <div className="absolute top-26 max-lg:top-32 md:max-lg:top-36 w-full text-center">
+                    <h1 className="text-3xl md:text-4xl max-lg:text-2xl md:max-lg:text-3xl max-lg:px-4 font-bold leading-tight mb-6">
                         Global Agricultural Solutions Rooted in Indian Excellence
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-200 mb-10">
+                    <p className="text-lg md:text-xl max-lg:px-4 max-lg:text-base text-gray-200 mb-10">
                         Sustainable sourcing, advanced processing, and dependable global delivery.
                     </p>
-                    <div className="flex justify-center gap-4">
-                        <button className="bg-white text-[#8b4513] hover:bg-gray-100 rounded-md font-semibold px-8 py-3 cursor-pointer" onClick={openModal}>
+                    <div className="flex justify-center gap-4 max-lg:flex-wrap max-lg:gap-2 max-lg:px-4">
+                        <button className="bg-white text-[#8b4513] hover:bg-gray-100 rounded-md font-semibold px-8 py-3 max-lg:px-4 max-lg:py-2.5 max-lg:text-sm cursor-pointer" onClick={openModal}>
                             Request a Quote
                         </button>
-                        <a href="#services" className="border border-white/80 text-white hover:bg-white hover:text-[#8b4513] rounded-md font-semibold px-8 py-3">
+                        <a href="#services" className="border border-white/80 text-white hover:bg-white hover:text-[#8b4513] rounded-md font-semibold px-8 py-3 max-lg:px-4 max-lg:py-2.5 max-lg:text-sm">
                             Our Services
                         </a>
-                        <a href="#" className="lg:hidden border border-white/80 text-white rounded-md font-semibold hover:bg-white hover:text-[#8b4513] px-8 py-3">
+                        <a href="#" className="lg:hidden border border-white/80 text-white rounded-md font-semibold hover:bg-white hover:text-[#8b4513] px-8 py-3 max-lg:px-4 max-lg:py-2.5 max-lg:text-sm">
                             Vendor Registration
                         </a>
                     </div>
                 </div>
-                <div className="grid  bottom-20 absolute grid-cols-4 w-full px-4 gap-6">
-                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 duration-300 hover:scale-105">
-                        <div className="text-3xl md:text-4xl font-semibold text-white mb-2">
+                <div className="grid bottom-20 max-lg:bottom-5 absolute grid-cols-4 max-lg:grid-cols-2 w-full px-4 max-lg:px-3 gap-6 max-lg:gap-3">
+                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 max-lg:p-3 text-center hover:bg-white/15 duration-300 hover:scale-105">
+                        <div className="text-3xl md:text-4xl max-lg:text-2xl font-semibold text-white mb-2">
                             50,000+
                         </div>
                         <div className="text-gray-200 text-sm md:text-base">Tons Traded</div>
                     </div>
-                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 duration-300 hover:scale-105">
-                        <div className="text-3xl md:text-4xl font-semibold text-white mb-2">
+                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 max-lg:p-3 text-center hover:bg-white/15 duration-300 hover:scale-105">
+                        <div className="text-3xl md:text-4xl max-lg:text-2xl font-semibold text-white mb-2">
                             10+
                         </div>
                         <div className="text-gray-200 text-sm md:text-base">Countries Served</div>
                     </div>
-                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 duration-300 hover:scale-105">
-                        <div className="text-3xl md:text-4xl font-semibold text-white mb-2">
+                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 max-lg:p-3 text-center hover:bg-white/15 duration-300 hover:scale-105">
+                        <div className="text-3xl md:text-4xl max-lg:text-2xl font-semibold text-white mb-2">
                             15+
                         </div>
                         <div className="text-gray-200 text-sm md:text-base">Years Experience</div>
                     </div>
-                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 duration-300 hover:scale-105">
-                        <div className="text-3xl md:text-4xl font-semibold text-white mb-2">
+                    <div className="bg-white/5 border border-white/20 rounded-xl p-6 max-lg:p-3 text-center hover:bg-white/15 duration-300 hover:scale-105">
+                        <div className="text-3xl md:text-4xl max-lg:text-2xl font-semibold text-white mb-2">
                             100+
                         </div>
                         <div className="text-gray-200 text-sm md:text-base">Happy Clients</div>
@@ -101,13 +101,13 @@ const Home=()=>{
             </section>    
             
             {/* Section 2 */}
-            <section className="relative">
-                <div className=" bg-cover bg-center h-130 brightness-75 saturate-90" style={{backgroundImage: `url(${bg2})`}}>
+            <section className="relative max-lg:h-[720px] md:max-lg:h-[680px]">
+                <div className="bg-cover bg-center h-130 max-lg:absolute max-lg:inset-0 max-lg:h-full brightness-75 saturate-90" style={{backgroundImage: `url(${bg2})`}}>
                     
                 </div>
-                <div className="absolute top-[13%] px-63">
-                    <div className="bg-white rounded-2xl md:p-8 p-6">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#8b4513] mb-4">
+                <div className="absolute top-[13%] px-63 max-lg:left-0 max-lg:right-0 max-lg:top-7 max-lg:px-4 sm:max-lg:px-6 md:max-lg:top-8 md:max-lg:px-10">
+                    <div className="bg-white rounded-2xl md:p-8 p-6 max-lg:p-5">
+                        <h2 className="text-2xl md:text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-[#8b4513] mb-4">
                             Smart Digital B2B Hub for Global Agri Trade
                         </h2>
                         <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
@@ -136,10 +136,12 @@ const Home=()=>{
            
 
             {/* Section 3 */}
-            <section id="services" className="h-95 py-16 bg-sky-50/40">
+            <section id="services" className="h-95 max-lg:h-auto py-16 max-lg:py-10 bg-sky-50/40">
                 <div>
-                    <h4 className="text-3xl text-center font-bold text-[#8b4513] mb-12">Our Services</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+                    <h4 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-12">
+                        Our Services
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-lg:grid-cols-2 gap-8 max-lg:gap-3 px-4">
                         <FeatureCard
                             icon="🌾"
                             title="Trading"
@@ -182,17 +184,17 @@ const Home=()=>{
             </section>
 
             {/* Section 4 */}
-            <section id="NeedQuote" className="h-117 py-16  bg-[#f5f5dc]">
+            <section id="NeedQuote" className="h-117 max-lg:h-auto py-16 max-lg:py-10 bg-[#f5f5dc]">
                 <div className="px-4">
                     <div className="text-center mb-12">
-                        <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-4">Need a Quote?</h5>
+                        <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-4">Need a Quote?</h5>
                         <p className="text-gray-600 mb-8">Get competitive pricing for your commodity requirements. Click below to open the quote form.</p>
                         
                         <button className="bg-green-800 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold shadow-lg cursor-pointer" onClick={openModal}>
                             <span className="flex items-center gap-2"><MdArrowForwardIos />Open Quote Form</span>
                         </button>
                     </div>
-                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 max-lg:grid-cols-2 gap-8 max-lg:gap-4">
                         <div className="text-center">
                             <p className="text-4xl mb-4">⚡</p>
                             <h3 className="text-xl font-bold text-green-700 mb-2">Fast Response</h3>
@@ -214,9 +216,9 @@ const Home=()=>{
             </section>
 
             {/* Section 5 */}
-            <section className="h-83 py-16 bg-white">
+            <section className="h-83 max-lg:h-auto py-16 max-lg:py-10 bg-white">
                 <div className="px-4">
-                    <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-12"> Featured Commodities</h5>
+                    <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-12"> Featured Commodities</h5>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 
                         <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg">
@@ -262,13 +264,13 @@ const Home=()=>{
             </section>
 
             {/* Section 6 */}
-            <section className="h-87 bg-[#f5f5dc] py-16">
+            <section className="h-87 max-lg:h-auto bg-[#f5f5dc] py-16 max-lg:py-10">
                 <div className="px-4">
                     <div className="text-center mb-12">
-                        <h5 className="text-3xl text-center font-bold text-[#8b4513] mb-4"> Brands that Trust Us</h5>
+                        <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-4"> Brands that Trust Us</h5>
                         <p className="text-gray-600 mb-8">Trusted by leading agricultural companies worldwide</p>
                     </div>
-                    <div className="flex justify-center gap-7">
+                    <div className="flex justify-center gap-7 max-lg:flex-wrap max-lg:gap-3">
                         <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">Global Grain Corp</p>

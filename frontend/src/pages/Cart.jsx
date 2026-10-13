@@ -87,7 +87,7 @@ const Cart = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(360px,0.9fr)]">
+                <div className="grid grid-cols-1 items-start gap-6 md:max-lg:grid-cols-[minmax(0,1fr)_minmax(250px,0.85fr)] lg:grid-cols-[minmax(0,1.7fr)_minmax(360px,0.9fr)] max-lg:gap-4">
 
                     {/* LEFT SIDE: CART PRODUCTS */}
                     <div className="space-y-4">
@@ -96,9 +96,9 @@ const Cart = () => {
 
                             <article key={item.product_id} className="rounded-2xl border border-[#e5e9e2] bg-white p-4 shadow-[0_5px_22px_rgba(39,58,44,0.06)] transition-shadow hover:shadow-[0_10px_28px_rgba(39,58,44,0.10)] sm:p-5">
 
-                                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                                <div className="flex flex-row items-start gap-3 sm:items-center sm:gap-4">
 
-                                    <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-2xl bg-[#f5f8f4] p-3 sm:h-32 sm:w-32">
+                                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-[#f5f8f4] p-2 sm:h-32 sm:w-32 sm:p-3">
                                         <img src={`http://localhost:9000/uploads/${item.image}`} alt={item.product_name} className="h-full w-full object-contain" />
                                     </div>
 

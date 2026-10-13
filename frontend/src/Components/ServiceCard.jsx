@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ icon, title, description, details, accentClass }) => {
 
     return(
-        <div className={`bg-white rounded-lg border-t-8 ${accentClass} shadow-xl hover:shadow-2xl duration-300 hover:-translate-y-1 p-8`}>
+        <div className={`bg-white rounded-lg border-t-8 ${accentClass} shadow-xl hover:shadow-2xl duration-300 hover:-translate-y-1 p-8 max-lg:p-4`}>
 
-            <p className="text-4xl mb-4">{icon}</p>
-            <h3 className="text-2xl font-bold text-[#1f2937] mb-2">{title}</h3>
+            <p className="text-4xl max-lg:text-3xl mb-4">{icon}</p>
+            <h3 className="text-2xl max-lg:text-xl font-bold text-[#1f2937] mb-2">{title}</h3>
             <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
             <h4 className="text-base font-semibold text-[#2f855a] mb-4">Key Features:</h4>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 mb-8 max-lg:space-y-2">
                 {details.map((item, index)=>(
                     <li key={index} className="flex gap-3 text-gray-700">
                         <span className="text-green-700">✓</span>

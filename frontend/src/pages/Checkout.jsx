@@ -75,7 +75,7 @@ const Checkout = () => {
                     </div>
                 </div>
 
-                <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(330px,0.75fr)]">
+                <div className="grid items-start gap-6 md:max-lg:grid-cols-[minmax(0,1.25fr)_minmax(250px,0.85fr)] lg:grid-cols-[minmax(0,1.45fr)_minmax(330px,0.75fr)] max-lg:gap-4">
 
                     <div className="space-y-5">
 
@@ -117,7 +117,7 @@ const Checkout = () => {
                             </div>
 
                             <h3 className="mb-2 mt-5 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">UPI apps</h3>
-                            <div className="grid gap-2 sm:grid-cols-2">
+                            <div className="grid grid-cols-2 gap-2">
                                 {paymentMethods.slice(0, 4).map((method) => (
                                     <button key={method.id} type="button" aria-pressed={selectedMethod === method.id} onClick={() => setSelectedMethod(method.id)} className={`flex min-h-14 items-center gap-3 rounded-xl border px-4 py-3 text-left transition ${selectedMethod === method.id ? "border-[#2f855a] bg-[#f1f8f2] ring-2 ring-[#2f855a]/10" : "border-[#e3e8e1] bg-white hover:border-[#a8c8ae] hover:bg-[#fbfdf9]"}`}>
                                         <span className="flex h-8 w-8 items-center justify-center">{method.icon}</span>

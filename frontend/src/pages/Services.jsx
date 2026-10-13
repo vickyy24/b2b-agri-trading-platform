@@ -26,10 +26,10 @@ const Services=()=>{
             />
 
             {/* Section 2 */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 max-lg:py-10 bg-gray-50">
                 <div className="mx-auto px-4">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-lg:grid-cols-2 gap-8 max-lg:gap-3">
 
                         <ServiceCard
                             icon="📊"
@@ -60,10 +60,10 @@ const Services=()=>{
                 </div>
             </section>
 
-            <section className="py-16 bg-[#f5f5dc]">
+            <section className="py-16 max-lg:py-10 bg-[#f5f5dc]">
                 <div className="mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12">Our Service Process</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-center text-[#8b4513] mb-12">Our Service Process</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-lg:grid-cols-2 gap-6 max-lg:gap-3">
                         {serviceSteps.map((step, index)=>(
                             <ProcessStep
                                 key={index}
@@ -76,10 +76,10 @@ const Services=()=>{
                 </div>
             </section>
 
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 max-lg:py-10 bg-gray-50">
                 <div className="mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12">Case Studies &amp; Success Stories</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-center text-[#8b4513] mb-12">Case Studies &amp; Success Stories</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-lg:grid-cols-2 gap-8 max-lg:gap-3">
                         <CaseStudyCard
                             initials="GFC"
                             client="Global Food Corp"
@@ -105,10 +105,10 @@ const Services=()=>{
                 </div>
             </section>
 
-            <section className="py-16 bg-white">
+            <section className="py-16 max-lg:py-10 bg-white">
                 <div className="mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#8b4513] mb-12">Why Choose Padmayog Agrotech?</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-center text-[#8b4513] mb-12">Why Choose Padmayog Agrotech?</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-lg:grid-cols-2 gap-8 max-lg:gap-3">
                         <FeatureCard
                             icon="🌍"
                             title="Global Network"
@@ -149,9 +149,9 @@ const Services=()=>{
                 </div>
             </section>
 
-            <section className="py-14 bg-[#f5f5dc]">
+            <section className="py-14 max-lg:py-10 bg-[#f5f5dc]">
                 <div className="mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold text-[#8b4513] mb-4">Ready to Partner with Us?</h2>
+                    <h2 className="text-3xl max-lg:text-2xl max-sm:text-xl font-bold text-[#8b4513] mb-4">Ready to Partner with Us?</h2>
                     <p className="text-gray-700 mb-7">Contact Vikas to discuss your agricultural commodity requirements.</p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link to="/contact" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-7 py-3 rounded-lg duration-300">

@@ -32,12 +32,12 @@ const Contact=()=>{
                 description="Get in touch for inquiries about commodities, services, trade partnerships, vendor registrations, or other business opportunities."
             />
 
-            <section className="py-10 bg-gray-50">
-                <div className="mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section className="py-10 max-sm:py-6 bg-gray-50">
+                <div className="mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 max-sm:gap-4">
 
-                    <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-sm:p-4">
                         <div className="text-center mb-6">
-                            <h2 className="text-2xl font-bold text-[#8b4513] mb-2">Get in Touch</h2>
+                            <h2 className="text-2xl max-sm:text-xl font-bold text-[#8b4513] mb-2">Get in Touch</h2>
                             <p className="text-gray-600">Fill out the form below and your email app will prepare a message.</p>
                         </div>
 
@@ -89,7 +89,7 @@ const Contact=()=>{
                     </div>
 
                     <div className="space-y-8">
-                        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-sm:p-4">
                             <h2 className="text-2xl font-bold text-[#2f855a] mb-6">Our Offices</h2>
                             <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                                 <h3 className="text-xl font-bold text-[#8b4513] mb-2">Vikas Sontakke</h3>
@@ -101,7 +101,7 @@ const Contact=()=>{
                                     </a>
                                     <a href="mailto:vikassontakke2002@gmail.com" className="flex items-center gap-3 text-gray-700 hover:text-green-800">
                                         <FaEnvelope className="text-green-700" />
-                                        <span>vikassontakke2002@gmail.com</span>
+                                        <span className="min-w-0 break-words">vikassontakke2002@gmail.com</span>
                                     </a>
                                 </div>
                             </div>
