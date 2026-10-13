@@ -226,15 +226,16 @@ const Home=()=>{
             <section className="h-83 max-lg:h-auto py-16 max-lg:py-10 bg-white">
                 <div className="px-4">
                     <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-12 max-sm:mb-4"> Featured Commodities</h5>
-                    <div className="mb-2 hidden max-sm:flex justify-end gap-2">
-                        <button onClick={() => scrollRow(commoditiesRef, -1)} aria-label="Scroll featured commodities left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
-                            <MdChevronLeft />
-                        </button>
-                        <button onClick={() => scrollRow(commoditiesRef, 1)} aria-label="Scroll featured commodities right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
-                            <MdChevronRight />
-                        </button>
-                    </div>
-                    <div ref={commoditiesRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-sm:flex max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:pb-2">
+                    <div className="relative max-sm:-mx-4">
+                        <div className="pointer-events-none absolute inset-x-2 top-1/2 z-10 hidden -translate-y-1/2 justify-between max-sm:flex">
+                            <button onClick={() => scrollRow(commoditiesRef, -1)} aria-label="Scroll featured commodities left" className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-md">
+                                <MdChevronLeft />
+                            </button>
+                            <button onClick={() => scrollRow(commoditiesRef, 1)} aria-label="Scroll featured commodities right" className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-md">
+                                <MdChevronRight />
+                            </button>
+                        </div>
+                        <div ref={commoditiesRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-sm:flex max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:px-12 max-sm:pb-2">
 
                         <div className="relative h-32 rounded-lg overflow-hidden border border-gray-200 shadow-lg max-sm:w-[150px] max-sm:shrink-0">
                             <img src={wheat} alt="wheatImg" className="absolute w-full h-full object-cover duration-500 hover:scale-110"/>
@@ -273,6 +274,7 @@ const Home=()=>{
                                 <h6 className="font-bold text-white text-center text-sm bg-black/10 mt-11 px-3 py-1.5 rounded-full backdrop-blur-sm">Barley</h6>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -285,15 +287,16 @@ const Home=()=>{
                         <h5 className="text-3xl max-lg:text-2xl max-sm:text-xl text-center font-bold text-[#8b4513] mb-4"> Brands that Trust Us</h5>
                         <p className="text-gray-600 mb-8">Trusted by leading agricultural companies worldwide</p>
                     </div>
-                    <div className="mb-2 hidden max-sm:flex justify-end gap-2">
-                        <button onClick={() => scrollRow(brandsRef, -1)} aria-label="Scroll brands left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
-                            <MdChevronLeft />
-                        </button>
-                        <button onClick={() => scrollRow(brandsRef, 1)} aria-label="Scroll brands right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-sm">
-                            <MdChevronRight />
-                        </button>
-                    </div>
-                    <div ref={brandsRef} className="flex justify-center gap-7 max-lg:flex-wrap max-lg:gap-3 max-sm:flex-nowrap max-sm:justify-start max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:pb-2">
+                    <div className="relative max-sm:-mx-4">
+                        <div className="pointer-events-none absolute inset-x-2 top-1/2 z-10 hidden -translate-y-1/2 justify-between max-sm:flex">
+                            <button onClick={() => scrollRow(brandsRef, -1)} aria-label="Scroll brands left" className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-md">
+                                <MdChevronLeft />
+                            </button>
+                            <button onClick={() => scrollRow(brandsRef, 1)} aria-label="Scroll brands right" className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[#d8cba8] bg-white text-[#8b4513] shadow-md">
+                                <MdChevronRight />
+                            </button>
+                        </div>
+                        <div ref={brandsRef} className="flex justify-center gap-7 max-lg:flex-wrap max-lg:gap-3 max-sm:flex-nowrap max-sm:justify-start max-sm:overflow-x-auto max-sm:scroll-smooth max-sm:px-12 max-sm:pb-2">
                         <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">Global Grain Corp</p>
@@ -325,6 +328,7 @@ const Home=()=>{
                         <div className="bg-white rounded-lg shadow-md w-40 h-28 p-4 border border-gray-200 max-sm:shrink-0">
                             <div className="w-24 h-12 bg-gray-300 rounded mb-2 mx-auto"></div>
                             <p className="text-sm text-gray-700 font-medium text-center">OrganicTrade Ltd</p>
+                        </div>
                         </div>
                     </div>
                 </div>
