@@ -12,6 +12,7 @@ import CategoryAdmin from "./pages/CategoryAdmin";
 import ProductAdmin from "./pages/ProductAdmin";
 import ViewProduct from "./pages/ViewProduct";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 const App=()=> {
     return(
@@ -31,6 +32,7 @@ const App=()=> {
                     <Route path="/global-reach" element={<GlobalReach />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/cart" element={<Cart/>}/>
+                    <Route path="/checkout" element={<Checkout/>}/>
 
                 </Route>
                 <Route path="/admin" element={<Admin />}>
