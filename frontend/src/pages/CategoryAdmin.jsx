@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import StatusMessage from "../Components/StatusMessage";
 
 const CategoryAdmin=()=>{
 
@@ -168,13 +169,11 @@ const CategoryAdmin=()=>{
 
     return(
         <>
-            {
-                backendMessage.msg &&
-                <div className={"fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50 " +
-                    (backendMessage.type === "success" ? "bg-green-600" : "bg-red-600")}>
-                    {backendMessage.msg}
-                </div>
-            }
+            <StatusMessage
+                message={backendMessage.msg}
+                type={backendMessage.type}
+                className="fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50"
+            />
             <div className="flex gap-6 items-start">
 
                 <div className="w-[40%] bg-white rounded-2xl shadow-md border border-gray-100 p-6">

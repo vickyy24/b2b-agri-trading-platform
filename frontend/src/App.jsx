@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Commodities from "./pages/Commodities";
@@ -6,8 +6,7 @@ import Services from "./pages/Services";
 import TradeProcess from "./pages/TradeProcess";
 import GlobalReach from "./pages/GlobalReach";
 import Contact from "./pages/Contact";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/footerSection";
+import PublicLayout from "./Components/PublicLayout";
 import Admin from "./pages/AdminPanel";
 import CategoryAdmin from "./pages/CategoryAdmin";
 import ProductAdmin from "./pages/ProductAdmin";
@@ -20,12 +19,7 @@ const App=()=> {
 
             <Routes>
                 {/* Parent Layout */}
-                <Route element={
-                    <>
-                        <Navbar />
-                        <Outlet />
-                        <Footer />
-                    </>}>
+                <Route element={<PublicLayout />}>
                     
                     {/* child routes rendered inside Outlet */}
                     <Route path="/" element={<Home />} />

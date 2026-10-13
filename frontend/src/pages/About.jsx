@@ -1,5 +1,6 @@
 import CommonHero from "../Components/CommonHero";
 import homeBgImage from "../assets/bgImageHome.jpg";
+import FeatureCard from "../Components/FeatureCard";
 
 const About=()=>{
     return(
@@ -78,36 +79,60 @@ const About=()=>{
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">🤝</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Integrity</h3>
-                            <p className="text-gray-600">Transparent, ethical, and compliance-driven trade practices</p>
-                        </div>
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">🎯</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Quality</h3>
-                            <p className="text-gray-600">Strict sourcing, processing, and inspection standards</p>
-                        </div>
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">🌍</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Global Focus</h3>
-                            <p className="text-gray-600">Aligned with international trade norms and buyer expectations</p>
-                        </div>
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">📦</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Reliability</h3>
-                            <p className="text-gray-600">Consistent supply execution with end-to-end accountability</p>
-                        </div>
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">🌱</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Strong Origins</h3>
-                            <p className="text-gray-600">Deep-rooted sourcing from trusted agricultural networks</p>
-                        </div>
-                        <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-                            <p className="text-5xl mb-4">🔐</p>
-                            <h3 className="text-xl font-bold text-[#2f855a] mb-2">Trust</h3>
-                            <p className="text-gray-600">Secure contracts, protected payments, and long-term partnerships</p>
-                        </div>
+                        <FeatureCard
+                            icon="🤝"
+                            title="Integrity"
+                            description="Transparent, ethical, and compliance-driven trade practices"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
+                        <FeatureCard
+                            icon="🎯"
+                            title="Quality"
+                            description="Strict sourcing, processing, and inspection standards"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
+                        <FeatureCard
+                            icon="🌍"
+                            title="Global Focus"
+                            description="Aligned with international trade norms and buyer expectations"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
+                        <FeatureCard
+                            icon="📦"
+                            title="Reliability"
+                            description="Consistent supply execution with end-to-end accountability"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
+                        <FeatureCard
+                            icon="🌱"
+                            title="Strong Origins"
+                            description="Deep-rooted sourcing from trusted agricultural networks"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
+                        <FeatureCard
+                            icon="🔐"
+                            title="Trust"
+                            description="Secure contracts, protected payments, and long-term partnerships"
+                            className="text-center p-6 hover:shadow-lg transition-shadow duration-300"
+                            iconClassName="text-5xl mb-4"
+                            titleClassName="text-xl font-bold text-[#2f855a] mb-2"
+                            descriptionClassName="text-gray-600"
+                        />
 
                     </div>
                 </div>

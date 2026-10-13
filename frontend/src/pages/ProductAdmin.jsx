@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import StatusMessage from "../Components/StatusMessage";
 
 const ProductAdmin=()=>{
     
@@ -379,13 +380,11 @@ const ProductAdmin=()=>{
     },[]);
     return(
         <>
-            {
-                backendMessage.msg &&
-                <div className={"fixed top-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50 " +
-                    (backendMessage.type === "success" ? "bg-green-600" : "bg-red-600")}>
-                    {backendMessage.msg}
-                </div>
-            }
+            <StatusMessage
+                message={backendMessage.msg}
+                type={backendMessage.type}
+                className="fixed top-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-lg text-white font-medium shadow-lg z-50"
+            />
         
             <div className="flex gap-3 items-start">
 
